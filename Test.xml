@@ -8,7 +8,6 @@
             <xs:complexType>
               <xs:sequence>
                 <xs:element name="RedemptionID" type="xs:string" minOccurs="0" />
-                <xs:element name="RedemptionDate" type="xs:string" minOccurs="0" />
                 <xs:element name="BookID" type="xs:string" minOccurs="0" />
                 <xs:element name="BookTitle" type="xs:string" minOccurs="0" />
                 <xs:element name="StudentID" type="xs:string" minOccurs="0" />
@@ -22,9 +21,9 @@
   </xs:schema>
   <Redemptions>
     <RedemptionID>1</RedemptionID>
-    <RedemptionDate>3</RedemptionDate>
-    <BookID>Guide to Flying</BookID>
-    <BookTitle>1</BookTitle>
-    <StudentID>Harry Potter</StudentID>
+    <BookID>4</BookID>
+    <BookTitle>Captivating Cartography</BookTitle>
+    <StudentID>6</StudentID>
+    <StudentName>Seamus Finnigan</StudentName>
   </Redemptions>
 </NewDataSet>

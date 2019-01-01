@@ -98,19 +98,7 @@ Public Class frmLauncher
             .MultiSelect = False
         End With
 
-        ''Read Redemtion Table XML
-        'Dim filePath2 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemption-New.xml"
-        'RedeamDataSet.ReadXml(filePath2)
-
-        'DataGridView4.DataSource = RedeamDataSet
-        'DataGridView4.DataMember = "redemptionXML"
-
-        'With Me.DataGridView4
-        '    .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        '    .MultiSelect = False
-        'End With
-
-
+        'Creating Columns for Redemption Table
         dt.Columns.Add("RedemptionID", GetType(String))
         dt.Columns.Add("BookID", GetType(String))
         dt.Columns.Add("BookTitle", GetType(String))
@@ -123,98 +111,9 @@ Public Class frmLauncher
             .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
         End With
 
-        'DataGridView3.ColumnCount = 6
-        'DataGridView3.Columns(0).Name = "RedemptionID"
-        'DataGridView3.Columns(1).Name = "RedemptionDate"
-        'DataGridView3.Columns(2).Name = "BookID"
-        'DataGridView3.Columns(3).Name = "BookTitle"
-        'DataGridView3.Columns(4).Name = "StudentID"
-        'DataGridView3.Columns(5).Name = "StudentName"
-
-    End Sub
-
-    Private Sub btnRedeamBook_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        'Selection of Book in Table
-        Dim selectedRowCount As Integer = _
-DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
-
-        Dim selectedRowIndex As Integer
-        Dim testValue2 As String
-
-        If selectedRowCount > 0 Then
-
-            Dim sb As New System.Text.StringBuilder()
-
-            Dim i As Integer
-            For i = 0 To selectedRowCount - 1
-
-                sb.Append("Row: ")
-                sb.Append(DataGridView1.SelectedRows(i).Index.ToString())
-                sb.Append(Environment.NewLine)
-                'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
-                selectedRowIndex = DataGridView1.SelectedRows(i).Index()
-            Next i
-            sb.Append("Total: " + selectedRowCount.ToString())
-            MessageBox.Show(sb.ToString(), "Selected Rows")
-            testValue2 = CStr(DataGridView1("Title", selectedRowIndex).Value)
-            MessageBox.Show(testValue2, "Book Selected")
-        End If
-
-    End Sub
-
-    Private Sub btnRedeamStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs)
-        'Selection of Student in Table
-        Dim selectedRowCount As Integer = _
-DataGridView2.Rows.GetRowCount(DataGridViewElementStates.Selected)
-
-        Dim selectedRowIndex As Integer
-        Dim studentFirstName As String
-        Dim studentLastName As String
-
-
-        If selectedRowCount > 0 Then
-
-            Dim sb As New System.Text.StringBuilder()
-
-            Dim i As Integer
-            For i = 0 To selectedRowCount - 1
-
-                sb.Append("Row: ")
-                sb.Append(DataGridView2.SelectedRows(i).Index.ToString())
-                sb.Append(Environment.NewLine)
-                'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
-                selectedRowIndex = DataGridView2.SelectedRows(i).Index()
-            Next i
-            sb.Append("Total: " + selectedRowCount.ToString())
-            MessageBox.Show(sb.ToString(), "Selected Rows")
-            studentFirstName = CStr(DataGridView2("First Name", selectedRowIndex).Value)
-            studentLastName = CStr(DataGridView2("Last Name", selectedRowIndex).Value)
-            MessageBox.Show(studentFirstName & " " & studentLastName, "Student Selected")
-        End If
-
-    End Sub
-
-    Private Sub frmlauncher_Load_2(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        'Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemption.xml"
-        'RedeamDataSet.ReadXml(filePath)
-
-        'DataGridView3.DataSource = RedeamDataSet
-        'DataGridView3.DataMember = "redemptionXML"
-
-        'With Me.DataGridView3
-        '    .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        '    .MultiSelect = False
-        'End With
     End Sub
 
     Private Sub btnFullRedeam_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnFullRedeam.Click
-
-        'DataGridView3.ColumnCount = 6
-        'DataGridView3.Columns(0).Name = "RedemptionID"
-        'DataGridView3.Columns(2).Name = "BookID"
-        'DataGridView3.Columns(3).Name = "BookTitle"
-        'DataGridView3.Columns(4).Name = "StudentID:"
-        'DataGridView3.Columns(5).Name = "StudentName"
 
         'Gather Student Name from Selected Student Table
         Dim selectedRowCount As Integer = _
@@ -273,21 +172,19 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
         row = New String() {redemtionID, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
         dt.Rows.Add(row)
+
         DataGridView3.DataSource = dt
-
-
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSave.Click
         'Save to XML
-        Dim dt As DataTable = CType(DataGridView3.DataSource, DataTable)
+        dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
         dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
     Private Sub btnLoad_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLoad.Click
         'Read from XML
-        Dim dt As New DataTable
         dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml")
         DataGridView3.DataSource = dt
     End Sub
