@@ -1,0 +1,21 @@
+{
+  "id": "http://www.phvis.com/customerinforequest",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Customer Information Request",
+  "version": "1.0.0",
+  "type": "object"
+  "properties": {
+      "bookId": {
+         "type": "string",
+         "description": "This is the id that uniquely identifies the customer whose information is being requested."
+         "pattern": "^[A-Z][0-9]{3}$",
+         "default": "1"
+      },   
+      "title": {
+         "type": "string",
+         "description": "Name of the book."
+         "pattern": "^[A-Z][0-9]{3}$",
+         "default": "<enter-title>"
+      }
+   }   
+}
