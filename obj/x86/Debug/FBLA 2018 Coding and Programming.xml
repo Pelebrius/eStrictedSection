@@ -6,7 +6,23 @@ FBLA2018CodingandProgramming
 </name>
 </assembly>
 <members>
-<member name="T:WindowsApplication1.FBLA_2018_TestingDataSet.BookDataTable">
+<member name="T:WindowsApplication1.dsRedemtion.dtRedemtionsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:WindowsApplication1.dsRedemtion.dtRedemtionsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:WindowsApplication1.dsRedemtion.dtRedemtionsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:WindowsApplication1.dsRedemtion">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:WindowsApplication1.FBLA_2018_TestingDataSet.BookDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>

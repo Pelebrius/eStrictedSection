@@ -53,6 +53,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -72,6 +73,14 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dsRedemtion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRedemtion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsRedemtion.vb">
+      <DependentUpon>dsRedemtion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FBLA_2018_TestingDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -81,6 +90,12 @@
       <DependentUpon>BookTable.vb</DependentUpon>
     </Compile>
     <Compile Include="BookTable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Redemtion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Redemtion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentTable.Designer.vb">
@@ -115,6 +130,9 @@
     <EmbeddedResource Include="BookTable.resx">
       <DependentUpon>BookTable.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Redemtion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLauncher.resx">
       <DependentUpon>frmLauncher.vb</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +148,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="dsRedemtion.xsc">
+      <DependentUpon>dsRedemtion.xsd</DependentUpon>
+    </None>
+    <None Include="dsRedemtion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRedemtion.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="dsRedemtion.xss">
+      <DependentUpon>dsRedemtion.xsd</DependentUpon>
+    </None>
     <None Include="FBLA_2018_TestingDataSet.xsc">
       <DependentUpon>FBLA_2018_TestingDataSet.xsd</DependentUpon>
     </None>
