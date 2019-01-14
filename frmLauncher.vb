@@ -9,6 +9,7 @@ Public Class frmLauncher
     Dim dt As New DataTable("Redemptions")
 
 
+
     Private Sub btnBookSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookSearch.Click
         'Search Book Titles
         Dim xmlFile As XmlReader
@@ -105,15 +106,29 @@ Public Class frmLauncher
         dt.Columns.Add("StudentID", GetType(String))
         dt.Columns.Add("StudentName", GetType(String))
 
+        'Load and Read Redemption XML
+        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml")
+        DataGridView3.DataSource = dt
+
+
+        With Me.DataGridView3
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
+
         With DataGridView3
             .DataSource = dt
             .AllowUserToAddRows = True : .AllowUserToDeleteRows = False
             .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
         End With
 
+        'AutoSelect First Row
+        DataGridView3.Rows(0).Selected = True
+
     End Sub
 
     Private Sub btnFullRedeam_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnFullRedeam.Click
+        'New Total value of rows
 
         'Gather Student Name from Selected Student Table
         Dim selectedRowCount As Integer = _
@@ -166,11 +181,12 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         End If
 
         bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
-        Static redemtionID As Integer
-        redemtionID += 1
+
+        Dim id As String = Format(Date.Now(), "yyyyMMddHHmmssfff")
+
         Dim row As String()
 
-        row = New String() {redemtionID, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
+        row = New String() {id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
         dt.Rows.Add(row)
 
         DataGridView3.DataSource = dt
@@ -183,9 +199,12 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
-    Private Sub btnLoad_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLoad.Click
-        'Read from XML
-        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml")
-        DataGridView3.DataSource = dt
+    Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
+        If DataGridView3.SelectedRows.Count > 0 Then
+            DataGridView3.Rows.Remove(DataGridView3.SelectedRows(0))
+            DataGridView3.Rows(0).Selected = True
+        Else
+            MessageBox.Show("Select 1 row before you hit delete")
+        End If
     End Sub
 End Class

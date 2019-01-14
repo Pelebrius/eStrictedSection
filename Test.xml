@@ -20,10 +20,24 @@
     </xs:element>
   </xs:schema>
   <Redemptions>
-    <RedemptionID>1</RedemptionID>
+    <RedemptionID>20190113180640105</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>3</StudentID>
+    <StudentName>Hermione Granger</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190113180652227</RedemptionID>
     <BookID>4</BookID>
     <BookTitle>Captivating Cartography</BookTitle>
-    <StudentID>6</StudentID>
-    <StudentName>Seamus Finnigan</StudentName>
+    <StudentID>4</StudentID>
+    <StudentName>Neville Longbottom</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190113180705644</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>5</StudentID>
+    <StudentName>Dean Thomas</StudentName>
   </Redemptions>
 </NewDataSet>

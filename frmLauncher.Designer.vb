@@ -46,7 +46,7 @@ Partial Class frmLauncher
         Me.DsRedemtionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.dsRedeamBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.btnLoad = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -200,9 +200,9 @@ Partial Class frmLauncher
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(217, 360)
+        Me.DataGridView3.Location = New System.Drawing.Point(206, 360)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(559, 191)
+        Me.DataGridView3.Size = New System.Drawing.Size(537, 191)
         Me.DataGridView3.TabIndex = 17
         '
         'RedeamDataSet
@@ -235,21 +235,21 @@ Partial Class frmLauncher
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'btnLoad
+        'btnDelete
         '
-        Me.btnLoad.Location = New System.Drawing.Point(443, 255)
-        Me.btnLoad.Name = "btnLoad"
-        Me.btnLoad.Size = New System.Drawing.Size(75, 23)
-        Me.btnLoad.TabIndex = 19
-        Me.btnLoad.Text = "Load"
-        Me.btnLoad.UseVisualStyleBackColor = True
+        Me.btnDelete.Location = New System.Drawing.Point(443, 255)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 19
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
         '
         'frmLauncher
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1004, 612)
-        Me.Controls.Add(Me.btnLoad)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.DataGridView3)
         Me.Controls.Add(Me.btnFullRedeam)
@@ -305,5 +305,5 @@ Partial Class frmLauncher
     Friend WithEvents DsRedemtionBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents dsRedeamBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents btnSave As System.Windows.Forms.Button
-    Friend WithEvents btnLoad As System.Windows.Forms.Button
+    Friend WithEvents btnDelete As System.Windows.Forms.Button
 End Class
