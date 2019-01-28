@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="redemption.xsd" generated="2018-12-28T16:03:23">
+<Redemption>
+<Redemption_x0020_ID>1</Redemption_x0020_ID>
+<Student_x0020_ID>1</Student_x0020_ID>
+<Book_x0020_ID>2</Book_x0020_ID>
+<Redemption_x0020_Date>2018-12-27T00:00:00</Redemption_x0020_Date>
+</Redemption>
+</dataroot>

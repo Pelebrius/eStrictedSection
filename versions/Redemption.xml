@@ -1,0 +1,26 @@
+<Table>
+<Redemption>
+<RedemptionId>1</RedemptionId>
+<StudentId>4</StudentId>
+<BookId>5</BookId>
+<RedemptionDate>2018-12-27T00:00:00</RedemptionDate>
+<BookTitle>Enchanting Charms</BookTitle>
+<StudentName>Neville Longbottom</StudentName>
+</Redemption>
+<Redemption>
+<RedemptionId>2</RedemptionId>
+<StudentId>6</StudentId>
+<BookId>4</BookId>
+<RedemptionDate>2019-01-01T00:00:00</RedemptionDate>
+<BookTitle>Captivating Cartography</BookTitle>
+<StudentName>Seamus Finnigan</StudentName>
+</Redemption>
+<Redemption>
+<RedemptionId>3</RedemptionId>
+<StudentId>7</StudentId>
+<BookId>7</BookId>
+<RedemptionDate>2019-01-01T00:00:00</RedemptionDate>
+<BookTitle>Mind of the Ministry</BookTitle>
+<StudentName>Tom Riddle</StudentName>
+</Redemption>
+</Table>

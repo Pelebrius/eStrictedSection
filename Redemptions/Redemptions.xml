@@ -1,0 +1,63 @@
+  <Redemptions>
+    <RedemptionID>20190113180640105</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>3</StudentID>
+    <StudentName>Hermione Granger</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190113180652227</RedemptionID>
+    <BookID>4</BookID>
+    <BookTitle>Captivating Cartography</BookTitle>
+    <StudentID>4</StudentID>
+    <StudentName>Neville Longbottom</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190113180705644</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>5</StudentID>
+    <StudentName>Dean Thomas</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190127155420981</RedemptionID>
+    <BookID>5</BookID>
+    <BookTitle>Enchanting Charms</BookTitle>
+    <StudentID>5</StudentID>
+    <StudentName>Dean Thomas</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190127155427275</RedemptionID>
+    <BookID>2</BookID>
+    <BookTitle>Prolific Potions</BookTitle>
+    <StudentID>6</StudentID>
+    <StudentName>Seamus Finnigan</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190127155452707</RedemptionID>
+    <BookID>1</BookID>
+    <BookTitle>A Magical Me</BookTitle>
+    <StudentID>3</StudentID>
+    <StudentName>Hermione Granger</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190127155458079</RedemptionID>
+    <BookID>5</BookID>
+    <BookTitle>Enchanting Charms</BookTitle>
+    <StudentID>3</StudentID>
+    <StudentName>Hermione Granger</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190127155502844</RedemptionID>
+    <BookID>7</BookID>
+    <BookTitle>Mind of the Ministry</BookTitle>
+    <StudentID>3</StudentID>
+    <StudentName>Hermione Granger</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>20190127155512213</RedemptionID>
+    <BookID>4</BookID>
+    <BookTitle>Captivating Cartography</BookTitle>
+    <StudentID>5</StudentID>
+    <StudentName>Dean Thomas</StudentName>
+  </Redemptions>
