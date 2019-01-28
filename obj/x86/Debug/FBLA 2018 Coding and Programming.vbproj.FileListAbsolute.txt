@@ -12,3 +12,5 @@ G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming
 G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.BookTable.resources
 G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.StudentTable.resources
 G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.Redemtion.resources
+G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\FBLA 2018 Coding and Programming.vbprojResolveAssemblyReference.cache
+G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.Report.resources

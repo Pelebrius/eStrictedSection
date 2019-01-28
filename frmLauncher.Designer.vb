@@ -42,18 +42,17 @@ Partial Class frmLauncher
         Me.btnFullRedeam = New System.Windows.Forms.Button()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.RedeamDataSet = New System.Data.DataSet()
-        Me.dsRedemtion = New WindowsApplication1.dsRedemtion()
-        Me.DsRedemtionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.dsRedeamBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnReport = New System.Windows.Forms.Button()
+        Me.DsRedemtionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.dsRedeamBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RedeamDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dsRedemtion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DsRedemtionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dsRedeamBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -160,7 +159,7 @@ Partial Class frmLauncher
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 134)
+        Me.DataGridView1.Location = New System.Drawing.Point(11, 134)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(356, 191)
@@ -200,31 +199,14 @@ Partial Class frmLauncher
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(206, 360)
+        Me.DataGridView3.Location = New System.Drawing.Point(200, 360)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(537, 191)
+        Me.DataGridView3.Size = New System.Drawing.Size(564, 191)
         Me.DataGridView3.TabIndex = 17
         '
         'RedeamDataSet
         '
-        Me.RedeamDataSet.DataSetName = "RedeamDataSet"
-        '
-        'dsRedemtion
-        '
-        Me.dsRedemtion.DataSetName = "dsRedemtion"
-        Me.dsRedemtion.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DsRedemtionBindingSource
-        '
-        Me.DsRedemtionBindingSource.AllowNew = True
-        Me.DsRedemtionBindingSource.DataSource = Me.dsRedemtion
-        Me.DsRedemtionBindingSource.Position = 0
-        '
-        'dsRedeamBindingSource
-        '
-        Me.dsRedeamBindingSource.AllowNew = True
-        Me.dsRedeamBindingSource.DataSource = Me.RedeamDataSet
-        Me.dsRedeamBindingSource.Position = 0
+        Me.RedeamDataSet.DataSetName = "NewDataSet"
         '
         'btnSave
         '
@@ -244,11 +226,23 @@ Partial Class frmLauncher
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
+        'btnReport
+        '
+        Me.btnReport.Location = New System.Drawing.Point(443, 284)
+        Me.btnReport.Name = "btnReport"
+        Me.btnReport.Size = New System.Drawing.Size(75, 23)
+        Me.btnReport.TabIndex = 20
+        Me.btnReport.Text = "Report"
+        Me.btnReport.UseVisualStyleBackColor = True
+        '
         'frmLauncher
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.BackgroundImage_Papyrus
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1004, 612)
+        Me.Controls.Add(Me.btnReport)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.DataGridView3)
@@ -275,7 +269,6 @@ Partial Class frmLauncher
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RedeamDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dsRedemtion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DsRedemtionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dsRedeamBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -301,9 +294,9 @@ Partial Class frmLauncher
     Friend WithEvents btnFullRedeam As System.Windows.Forms.Button
     Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
     Friend WithEvents RedeamDataSet As System.Data.DataSet
-    Friend WithEvents dsRedemtion As WindowsApplication1.dsRedemtion
     Friend WithEvents DsRedemtionBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents dsRedeamBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnDelete As System.Windows.Forms.Button
+    Friend WithEvents btnReport As System.Windows.Forms.Button
 End Class

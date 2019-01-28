@@ -107,7 +107,7 @@ Public Class frmLauncher
         dt.Columns.Add("StudentName", GetType(String))
 
         'Load and Read Redemption XML
-        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml")
+        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
         DataGridView3.DataSource = dt
 
 
@@ -189,6 +189,30 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         row = New String() {id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
         dt.Rows.Add(row)
 
+        'Dim reportString As String
+        'Dim length As Integer
+
+
+
+        'Dim lastStudentFirstName As String
+
+        'Equals(lastStudentFirstName, studentFirstName)
+
+
+        'reportString = studentFirstName & " " & studentLastName
+
+        'Report.lblReport1.Text = reportString & " "
+
+        'length = reportString.Length - 1
+
+        'If studentFirstName = studentFirstName Then
+        '    reportString = reportString.Insert(length, bookTitle)
+        '    Report.lblReport1.Text = vbCrLf & bookTitle
+        'Else
+        '    Report.lblReport1.Text = vbCrLf
+        'End If
+
+
         DataGridView3.DataSource = dt
     End Sub
 
@@ -196,15 +220,22 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         'Save to XML
         dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
-        dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Test.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
+        'Delete Selected Record
         If DataGridView3.SelectedRows.Count > 0 Then
             DataGridView3.Rows.Remove(DataGridView3.SelectedRows(0))
             DataGridView3.Rows(0).Selected = True
         Else
             MessageBox.Show("Select 1 row before you hit delete")
         End If
+    End Sub
+
+    Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click
+        Report.dgvReport.DataSource = DataGridView3.DataSource
+        Report.Show()
+       
     End Sub
 End Class
