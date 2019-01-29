@@ -96,4 +96,18 @@
     <StudentID>1</StudentID>
     <StudentName>Harry Potter</StudentName>
   </Redemptions>
+  <Redemptions>
+    <RedemptionID>128200141767</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>5</StudentID>
+    <StudentName>Dean Thomas</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionID>128214522808</RedemptionID>
+    <BookID>3</BookID>
+    <BookTitle>Guide to Flying</BookTitle>
+    <StudentID>12</StudentID>
+    <StudentName>Balthusar Sylvestor</StudentName>
+  </Redemptions>
 </NewDataSet>

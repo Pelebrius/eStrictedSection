@@ -7,9 +7,9 @@ Public Class frmLauncher
     Dim studentLastName As String
     Dim selectedRowIndex As Integer
     Dim dt As New DataTable("Redemptions")
-
-
-
+    Public studentdt As New DataTable("Student")
+    Const FLAG As Integer = 1
+   
     Private Sub btnBookSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookSearch.Click
         'Search Book Titles
         Dim xmlFile As XmlReader
@@ -73,57 +73,130 @@ Public Class frmLauncher
     Private Sub btnStudentTable_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnStudentTable.Click
         StudentTable.Show()
     End Sub
+
+    Private Sub frmLauncher_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        'Prompt user to make sure all saved changes are in fact saved
+        If MessageBox.Show("Are you sure you want to close this application? All unsaved records will be lost", "Leaving the Restricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        Else
+            e.Cancel = True
+        End If
+    End Sub
     Private Sub frmLauncher_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Read Book Table XML
-        Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml"
-        BookDataSet.ReadXml(filePath)
-
-        DataGridView1.DataSource = BookDataSet
-        DataGridView1.DataMember = "book"
-
-        With Me.DataGridView1
-            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            .MultiSelect = False
-        End With
-
-        'Read Student Table XML
-        Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
-        StudentDataSet.ReadXml(filePath1)
-
-        DataGridView2.DataSource = StudentDataSet
-        DataGridView2.DataMember = "student"
-
-        With Me.DataGridView2
-            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            .MultiSelect = False
-        End With
-
-        'Creating Columns for Redemption Table
-        dt.Columns.Add("RedemptionID", GetType(String))
-        dt.Columns.Add("BookID", GetType(String))
-        dt.Columns.Add("BookTitle", GetType(String))
-        dt.Columns.Add("StudentID", GetType(String))
-        dt.Columns.Add("StudentName", GetType(String))
-
-        'Load and Read Redemption XML
-        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
-        DataGridView3.DataSource = dt
 
 
-        With Me.DataGridView3
-            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            .MultiSelect = False
-        End With
 
-        With DataGridView3
-            .DataSource = dt
-            .AllowUserToAddRows = True : .AllowUserToDeleteRows = False
-            .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
-        End With
+            'Read Book Table XML
+            Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml"
+            BookDataSet.ReadXml(filePath)
 
-        'AutoSelect First Row
-        DataGridView3.Rows(0).Selected = True
+            DataGridView1.DataSource = BookDataSet
+            DataGridView1.DataMember = "book"
+
+            With Me.DataGridView1
+                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                .MultiSelect = False
+            End With
+
+            'Read Student Table XML
+            'Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
+            Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml"
+            StudentDataSet.ReadXml(filePath1)
+
+            DataGridView2.DataSource = StudentDataSet
+            DataGridView2.DataMember = "student"
+
+            With Me.DataGridView2
+                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                .MultiSelect = False
+            End With
+
+            'Creating Columns for Redemption Table
+            dt.Columns.Add("RedemptionID", GetType(String))
+            dt.Columns.Add("BookID", GetType(String))
+            dt.Columns.Add("BookTitle", GetType(String))
+            dt.Columns.Add("StudentID", GetType(String))
+            dt.Columns.Add("StudentName", GetType(String))
+
+            'Create colums for student Table
+            studentdt.Columns.Add("Student ID", GetType(String))
+            studentdt.Columns.Add("First Name", GetType(String))
+            studentdt.Columns.Add("Last Name", GetType(String))
+            studentdt.Columns.Add("School", GetType(String))
+            studentdt.Columns.Add("Grade", GetType(String))
+            studentdt.Columns.Add("E-Mail", GetType(String))
+
+            With dgvStudent
+                .DataSource = studentdt
+                .AllowUserToAddRows = True : .AllowUserToDeleteRows = True
+                .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
+
+            End With
+            'Load and Read Redemption XML
+            dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
+            DataGridView3.DataSource = dt
+
+            'Load and Read Student XML
+            studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
+            dgvStudent.DataSource = studentdt
+
+            With Me.DataGridView3
+                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                .MultiSelect = False
+            End With
+
+            With DataGridView3
+                .DataSource = dt
+                .AllowUserToAddRows = True : .AllowUserToDeleteRows = False
+                .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
+            End With
+
+            'AutoSelect First Row
+            DataGridView3.Rows(0).Selected = True
+
+
+
+            ''Create an editable Student table
+            'Dim sourceGrid As DataGridView = DataGridView2
+            'Dim targetGrid As DataGridView = Me.dgvStudent
+
+            ''Copy all rows and cells.
+
+            'Dim targetRows = New List(Of DataGridViewRow)
+
+            'For Each sourceRow As DataGridViewRow In sourceGrid.Rows
+            '    If (Not sourceRow.IsNewRow) Then
+
+            '        Dim targetRow = CType(sourceRow.Clone(), DataGridViewRow)
+
+            '        'The Clone method do not copy the cell values so we must do this manually.
+            '        'See: https://msdn.microsoft.com/en-us/library/system.windows.forms.datagridviewrow.clone(v=vs.110).aspx
+
+            '        For Each cell As DataGridViewCell In sourceRow.Cells
+            '            targetRow.Cells(cell.ColumnIndex).Value = cell.Value
+            '        Next
+
+            '        targetRows.Add(targetRow)
+            '    End If
+            'Next
+
+            ''Clear target columns and then clone all source columns.
+
+            'targetGrid.Columns.Clear()
+
+            'For Each column As DataGridViewColumn In sourceGrid.Columns
+            '    targetGrid.Columns.Add(CType(column.Clone(), DataGridViewColumn))
+            'Next
+
+            ''It's recommended to use the AddRange method (if available)
+            ''when adding multiple items to a collection.
+
+            'targetGrid.Rows.AddRange(targetRows.ToArray())
+
+            With Me.dgvStudent
+                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+                .MultiSelect = False
+            End With
 
     End Sub
 
@@ -183,34 +256,12 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
 
         Dim id As String = Format(Date.Now(), "yyyyMMddHHmmssfff")
+        id = id.Remove(0, 5)
 
         Dim row As String()
 
         row = New String() {id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
         dt.Rows.Add(row)
-
-        'Dim reportString As String
-        'Dim length As Integer
-
-
-
-        'Dim lastStudentFirstName As String
-
-        'Equals(lastStudentFirstName, studentFirstName)
-
-
-        'reportString = studentFirstName & " " & studentLastName
-
-        'Report.lblReport1.Text = reportString & " "
-
-        'length = reportString.Length - 1
-
-        'If studentFirstName = studentFirstName Then
-        '    reportString = reportString.Insert(length, bookTitle)
-        '    Report.lblReport1.Text = vbCrLf & bookTitle
-        'Else
-        '    Report.lblReport1.Text = vbCrLf
-        'End If
 
 
         DataGridView3.DataSource = dt
@@ -221,6 +272,11 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
         dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+
+        'studentdt = CType(dgvStudent.DataSource, DataTable)
+        'studentdt.AcceptChanges()
+        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
@@ -237,5 +293,112 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         Report.dgvReport.DataSource = DataGridView3.DataSource
         Report.Show()
        
+    End Sub
+
+    Private Sub SaveToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveToolStripMenuItem.Click
+        'Save Redemption to XML
+        dt = CType(DataGridView3.DataSource, DataTable)
+        dt.AcceptChanges()
+        dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+        'studentdt = CType(dgvStudent.DataSource, DataTable)
+        'studentdt.AcceptChanges()
+        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml", System.Data.XmlWriteMode.WriteSchema, False)
+    End Sub
+
+    Private Sub ReportToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportToolStripMenuItem.Click
+        Report.dgvReport.DataSource = DataGridView3.DataSource
+        Report.Show()
+        'Me.Hide()
+    End Sub
+
+    Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
+        frmStudentAddition.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnRedeamAfterStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRedeamAfterStudent.Click
+
+        'Gather Student Name from Selected Student Table
+        Dim selectedRowCount As Integer = _
+dgvStudent.Rows.GetRowCount(DataGridViewElementStates.Selected)
+        Dim studentID As Integer
+
+        If selectedRowCount > 0 Then
+
+            Dim sb As New System.Text.StringBuilder()
+
+            Dim i As Integer
+            For i = 0 To selectedRowCount - 1
+
+                sb.Append("Row: ")
+                sb.Append(dgvStudent.SelectedRows(i).Index.ToString())
+                sb.Append(Environment.NewLine)
+                'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
+                selectedRowIndex = dgvStudent.SelectedRows(i).Index()
+            Next i
+            sb.Append("Total: " + selectedRowCount.ToString())
+            studentFirstName = CStr(dgvStudent("First Name", selectedRowIndex).Value)
+            studentLastName = CStr(dgvStudent("Last Name", selectedRowIndex).Value)
+            studentID = CStr(dgvStudent("Student ID", selectedRowIndex).Value)
+        End If
+
+        'Gather Title from Selected Book Table
+        Dim selectedRowCount1 As Integer = _
+DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
+
+        Dim selectedRowIndex1 As Integer
+        Dim bookTitle As String
+        Dim bookID As Integer
+
+        If selectedRowCount1 > 0 Then
+
+            Dim sb As New System.Text.StringBuilder()
+
+            Dim i As Integer
+            For i = 0 To selectedRowCount1 - 1
+
+                sb.Append("Row: ")
+                sb.Append(DataGridView1.SelectedRows(i).Index.ToString())
+                sb.Append(Environment.NewLine)
+                'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
+                selectedRowIndex1 = DataGridView1.SelectedRows(i).Index()
+            Next i
+            sb.Append("Total: " + selectedRowCount1.ToString())
+            bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
+            bookID = CStr(DataGridView1("BookId", selectedRowIndex1).Value)
+        End If
+
+        bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
+
+        Dim id As String = Format(Date.Now(), "yyyyMMddHHmmssfff")
+        id = id.Remove(0, 5)
+
+        Dim row As String()
+
+        row = New String() {id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
+        dt.Rows.Add(row)
+
+
+        DataGridView3.DataSource = dt
+    End Sub
+
+    Private Sub frmLauncher_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
+        Call ClearTable(studentdt)
+
+        'Refreash Student Table
+        'Load and Read Student XML
+        studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
+        dgvStudent.DataSource = studentdt
+
+    End Sub
+    Sub ClearTable(ByVal table As DataTable)
+        Try
+            table.Clear()
+        Catch e As DataException
+            ' Process exception and return.
+            Console.WriteLine("Exception of type {0} occurred.", _
+              e.GetType().ToString())
+        End Try
     End Sub
 End Class

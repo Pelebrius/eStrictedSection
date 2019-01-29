@@ -17,10 +17,10 @@
                 newName = (row.Cells("StudentName").Value.ToString)
 
                 If Equals(currentName, newName) = True Then
-                    Me.txtReport.AppendText(vbTab & row.Cells("BookTitle").Value.ToString & Environment.NewLine)
+                    Me.txtReport.AppendText(vbTab & vbTab & row.Cells("BookTitle").Value.ToString & Environment.NewLine)
                 Else
                     Me.txtReport.AppendText(row.Cells("StudentName").Value.ToString & Environment.NewLine)
-                    Me.txtReport.AppendText(vbTab & row.Cells("BookTitle").Value.ToString & Environment.NewLine)
+                    Me.txtReport.AppendText(vbTab & vbTab & row.Cells("BookTitle").Value.ToString & Environment.NewLine)
                 End If
 
                 currentName = newName
@@ -28,5 +28,8 @@
         Next
     End Sub
 
-
+    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click
+        Me.Hide()
+        frmLauncher.Show()
+    End Sub
 End Class
