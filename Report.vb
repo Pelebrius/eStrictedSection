@@ -2,6 +2,7 @@
     Private Sub Report_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Me.txtDate.Text = Now.Date
 
+
         'Order incoming Data Table
         dgvReport.Sort(dgvReport.Columns(4), System.ComponentModel.ListSortDirection.Ascending)
 
@@ -28,8 +29,10 @@
         Next
     End Sub
 
-    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click
+    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
         Me.Hide()
+
+        frmLauncher.DataGridView3.Sort(frmLauncher.DataGridView3.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
         frmLauncher.Show()
     End Sub
 End Class

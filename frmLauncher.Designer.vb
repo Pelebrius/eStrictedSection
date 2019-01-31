@@ -23,7 +23,6 @@ Partial Class frmLauncher
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLauncher))
         Me.txtBookSearch = New System.Windows.Forms.TextBox()
         Me.lblPromptBook = New System.Windows.Forms.Label()
         Me.lblPromptStudent = New System.Windows.Forms.Label()
@@ -56,6 +55,7 @@ Partial Class frmLauncher
         Me.btnAddBook = New System.Windows.Forms.Button()
         Me.dgvStudent = New System.Windows.Forms.DataGridView()
         Me.btnRedeamAfterStudent = New System.Windows.Forms.Button()
+        Me.dgvBook = New System.Windows.Forms.DataGridView()
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +66,7 @@ Partial Class frmLauncher
         CType(Me.dsRedeamBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip.SuspendLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBookSearch
@@ -214,6 +215,7 @@ Partial Class frmLauncher
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(200, 360)
         Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.ReadOnly = True
         Me.DataGridView3.Size = New System.Drawing.Size(564, 229)
         Me.DataGridView3.TabIndex = 17
         '
@@ -253,11 +255,12 @@ Partial Class frmLauncher
         '
         'MenuStrip
         '
-        Me.MenuStrip.BackColor = System.Drawing.Color.DarkGoldenrod
+        Me.MenuStrip.BackColor = System.Drawing.Color.Tan
+        Me.MenuStrip.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.AddStudentImage_FourHouses
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(1004, 29)
+        Me.MenuStrip.Size = New System.Drawing.Size(957, 29)
         Me.MenuStrip.TabIndex = 21
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -304,27 +307,38 @@ Partial Class frmLauncher
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvStudent.Location = New System.Drawing.Point(30, 126)
         Me.dgvStudent.Name = "dgvStudent"
+        Me.dgvStudent.ReadOnly = True
         Me.dgvStudent.Size = New System.Drawing.Size(367, 198)
         Me.dgvStudent.TabIndex = 24
         '
         'btnRedeamAfterStudent
         '
         Me.btnRedeamAfterStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRedeamAfterStudent.Location = New System.Drawing.Point(445, 159)
+        Me.btnRedeamAfterStudent.Location = New System.Drawing.Point(445, 162)
         Me.btnRedeamAfterStudent.Name = "btnRedeamAfterStudent"
         Me.btnRedeamAfterStudent.Size = New System.Drawing.Size(75, 23)
         Me.btnRedeamAfterStudent.TabIndex = 25
         Me.btnRedeamAfterStudent.Text = "Redeam"
         Me.btnRedeamAfterStudent.UseVisualStyleBackColor = True
         '
+        'dgvBook
+        '
+        Me.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBook.Location = New System.Drawing.Point(571, 134)
+        Me.dgvBook.Name = "dgvBook"
+        Me.dgvBook.ReadOnly = True
+        Me.dgvBook.Size = New System.Drawing.Size(356, 191)
+        Me.dgvBook.TabIndex = 26
+        '
         'frmLauncher
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.BackgroundImage_Parchment
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1004, 612)
+        Me.ClientSize = New System.Drawing.Size(957, 600)
+        Me.Controls.Add(Me.dgvBook)
         Me.Controls.Add(Me.btnRedeamAfterStudent)
         Me.Controls.Add(Me.dgvStudent)
         Me.Controls.Add(Me.btnAddBook)
@@ -363,6 +377,7 @@ Partial Class frmLauncher
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -399,4 +414,5 @@ Partial Class frmLauncher
     Friend WithEvents btnAddBook As System.Windows.Forms.Button
     Friend WithEvents dgvStudent As System.Windows.Forms.DataGridView
     Friend WithEvents btnRedeamAfterStudent As System.Windows.Forms.Button
+    Friend WithEvents dgvBook As System.Windows.Forms.DataGridView
 End Class

@@ -111,6 +111,7 @@ Partial Class Report
         'MenuStrip
         '
         Me.MenuStrip.BackColor = System.Drawing.Color.Tan
+        Me.MenuStrip.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.AddStudentImage_FourHouses
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
@@ -129,7 +130,7 @@ Partial Class Report
         'HomeToolStripMenuItem
         '
         Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
-        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.HomeToolStripMenuItem.Text = "Home"
         '
         'Report
@@ -138,7 +139,7 @@ Partial Class Report
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(428, 522)
+        Me.ClientSize = New System.Drawing.Size(428, 528)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.lblStudentName)
         Me.Controls.Add(Me.lblBookTitle)

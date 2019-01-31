@@ -63,6 +63,56 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property AddBookMenubackground_MagicLine() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AddBookMenubackground-MagicLine", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property AddBookMenuImage_FoldedPages___Copy() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AddBookMenuImage-FoldedPages - Copy", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property AddBookMenuImage_FoldedPages___Lighter() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AddBookMenuImage-FoldedPages - Lighter", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property AddStudentImage_DuelingWizards() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AddStudentImage-DuelingWizards", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property AddStudentImage_FourHouses() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("AddStudentImage-FourHouses", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property BackgroundImage_Papyrus() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("BackgroundImage-Papyrus", resourceCulture)
@@ -76,6 +126,26 @@ Namespace My.Resources
         Friend ReadOnly Property BackgroundImage_Parchment() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("BackgroundImage-Parchment", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property BookLayout() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("BookLayout", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property HogwartsCrest() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("HogwartsCrest", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

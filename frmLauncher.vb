@@ -8,6 +8,7 @@ Public Class frmLauncher
     Dim selectedRowIndex As Integer
     Dim dt As New DataTable("Redemptions")
     Public studentdt As New DataTable("Student")
+    Public bookdt As New DataTable("Book")
     Const FLAG As Integer = 1
    
     Private Sub btnBookSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookSearch.Click
@@ -76,7 +77,7 @@ Public Class frmLauncher
 
     Private Sub frmLauncher_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         'Prompt user to make sure all saved changes are in fact saved
-        If MessageBox.Show("Are you sure you want to close this application? All unsaved records will be lost", "Leaving the Restricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to close this application? All unsaved redemptions will be lost", "Leaving the Restricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
         Else
             e.Cancel = True
         End If
@@ -87,7 +88,7 @@ Public Class frmLauncher
 
 
             'Read Book Table XML
-            Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml"
+        Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book - Copy.xml"
             BookDataSet.ReadXml(filePath)
 
             DataGridView1.DataSource = BookDataSet
@@ -97,6 +98,19 @@ Public Class frmLauncher
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 .MultiSelect = False
             End With
+
+        'Create columns for Book Table
+        bookdt.Columns.Add("BookId", GetType(String))
+        bookdt.Columns.Add("Title", GetType(String))
+        bookdt.Columns.Add("Author", GetType(String))
+        bookdt.Columns.Add("Subject", GetType(String))
+
+        With dgvBook
+            .DataSource = bookdt
+            .AllowUserToAddRows = True : .AllowUserToDeleteRows = True
+            .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
+
+        End With
 
             'Read Student Table XML
             'Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
@@ -109,7 +123,23 @@ Public Class frmLauncher
             With Me.DataGridView2
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 .MultiSelect = False
-            End With
+        End With
+
+        'Create columns for Student Table
+        studentdt.Columns.Add("Student ID", GetType(String))
+        studentdt.Columns.Add("First Name", GetType(String))
+        studentdt.Columns.Add("Last Name", GetType(String))
+        studentdt.Columns.Add("School", GetType(String))
+        studentdt.Columns.Add("Grade", GetType(String))
+        studentdt.Columns.Add("E-Mail", GetType(String))
+
+
+        With dgvStudent
+            .DataSource = studentdt
+            .AllowUserToAddRows = True : .AllowUserToDeleteRows = True
+            .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
+
+        End With
 
             'Creating Columns for Redemption Table
             dt.Columns.Add("RedemptionID", GetType(String))
@@ -118,28 +148,19 @@ Public Class frmLauncher
             dt.Columns.Add("StudentID", GetType(String))
             dt.Columns.Add("StudentName", GetType(String))
 
-            'Create colums for student Table
-            studentdt.Columns.Add("Student ID", GetType(String))
-            studentdt.Columns.Add("First Name", GetType(String))
-            studentdt.Columns.Add("Last Name", GetType(String))
-            studentdt.Columns.Add("School", GetType(String))
-            studentdt.Columns.Add("Grade", GetType(String))
-            studentdt.Columns.Add("E-Mail", GetType(String))
+        'Load and Read Redemption XML
+        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
+        DataGridView3.DataSource = dt
 
-            With dgvStudent
-                .DataSource = studentdt
-                .AllowUserToAddRows = True : .AllowUserToDeleteRows = True
-                .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
+        'Load and Read Student XML
+        studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
+        dgvStudent.DataSource = studentdt
 
-            End With
-            'Load and Read Redemption XML
-            dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
-            DataGridView3.DataSource = dt
+        'Load and Read Book XML
+        bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book - Copy.xml")
+        dgvBook.DataSource = bookdt
 
-            'Load and Read Student XML
-            studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
-            dgvStudent.DataSource = studentdt
-
+        'Redemption Table (Select only One row)
             With Me.DataGridView3
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
                 .MultiSelect = False
@@ -151,52 +172,25 @@ Public Class frmLauncher
                 .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
             End With
 
+        'Allow only one row selection Student Table
+
+        With Me.dgvStudent
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
+
+        'Allow only one row selection Book Table
+        With Me.dgvBook
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
+
+
             'AutoSelect First Row
             DataGridView3.Rows(0).Selected = True
 
-
-
-            ''Create an editable Student table
-            'Dim sourceGrid As DataGridView = DataGridView2
-            'Dim targetGrid As DataGridView = Me.dgvStudent
-
-            ''Copy all rows and cells.
-
-            'Dim targetRows = New List(Of DataGridViewRow)
-
-            'For Each sourceRow As DataGridViewRow In sourceGrid.Rows
-            '    If (Not sourceRow.IsNewRow) Then
-
-            '        Dim targetRow = CType(sourceRow.Clone(), DataGridViewRow)
-
-            '        'The Clone method do not copy the cell values so we must do this manually.
-            '        'See: https://msdn.microsoft.com/en-us/library/system.windows.forms.datagridviewrow.clone(v=vs.110).aspx
-
-            '        For Each cell As DataGridViewCell In sourceRow.Cells
-            '            targetRow.Cells(cell.ColumnIndex).Value = cell.Value
-            '        Next
-
-            '        targetRows.Add(targetRow)
-            '    End If
-            'Next
-
-            ''Clear target columns and then clone all source columns.
-
-            'targetGrid.Columns.Clear()
-
-            'For Each column As DataGridViewColumn In sourceGrid.Columns
-            '    targetGrid.Columns.Add(CType(column.Clone(), DataGridViewColumn))
-            'Next
-
-            ''It's recommended to use the AddRange method (if available)
-            ''when adding multiple items to a collection.
-
-            'targetGrid.Rows.AddRange(targetRows.ToArray())
-
-            With Me.dgvStudent
-                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-                .MultiSelect = False
-            End With
+        'Order Redemption Id's in ascending order
+        DataGridView3.Sort(DataGridView3.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
 
     End Sub
 
@@ -345,7 +339,7 @@ dgvStudent.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
         'Gather Title from Selected Book Table
         Dim selectedRowCount1 As Integer = _
-DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
+dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
         Dim selectedRowIndex1 As Integer
         Dim bookTitle As String
@@ -359,20 +353,20 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
             For i = 0 To selectedRowCount1 - 1
 
                 sb.Append("Row: ")
-                sb.Append(DataGridView1.SelectedRows(i).Index.ToString())
+                sb.Append(dgvBook.SelectedRows(i).Index.ToString())
                 sb.Append(Environment.NewLine)
                 'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
-                selectedRowIndex1 = DataGridView1.SelectedRows(i).Index()
+                selectedRowIndex1 = dgvBook.SelectedRows(i).Index()
             Next i
             sb.Append("Total: " + selectedRowCount1.ToString())
-            bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
-            bookID = CStr(DataGridView1("BookId", selectedRowIndex1).Value)
+            bookTitle = CStr(dgvBook("Title", selectedRowIndex1).Value)
+            bookID = CStr(dgvBook("BookId", selectedRowIndex1).Value)
         End If
 
-        bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
+        bookTitle = CStr(dgvBook("Title", selectedRowIndex1).Value)
 
         Dim id As String = Format(Date.Now(), "yyyyMMddHHmmssfff")
-        id = id.Remove(0, 5)
+        id = id.Remove(14, 3)
 
         Dim row As String()
 
@@ -385,11 +379,17 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
     Private Sub frmLauncher_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
         Call ClearTable(studentdt)
+        Call ClearTable(bookdt)
 
-        'Refreash Student Table
+        'Refresh Student Table
         'Load and Read Student XML
         studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
         dgvStudent.DataSource = studentdt
+
+        'Refresh Book Table
+        'Load and Read Book XML
+        bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book - Copy.xml")
+        dgvBook.DataSource = bookdt
 
     End Sub
     Sub ClearTable(ByVal table As DataTable)
@@ -400,5 +400,10 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
             Console.WriteLine("Exception of type {0} occurred.", _
               e.GetType().ToString())
         End Try
+    End Sub
+
+    Private Sub btnAddBook_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddBook.Click
+        frmAddBook.Show()
+        Me.Hide()
     End Sub
 End Class

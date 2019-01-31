@@ -92,6 +92,12 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAddBook.Designer.vb">
+      <DependentUpon>frmAddBook.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddBook.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAddStudent.Designer.vb">
       <DependentUpon>frmAddStudent.vb</DependentUpon>
     </Compile>
@@ -142,6 +148,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Redemtion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddBook.resx">
+      <DependentUpon>frmAddBook.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddStudent.resx">
       <DependentUpon>frmAddStudent.vb</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +196,13 @@
   <ItemGroup>
     <None Include="BackgroundImage-Papyrus.jpg" />
     <None Include="BackgroundImage-Parchment.jpg" />
+    <None Include="AddStudentImage-DuelingWizards.jpg" />
+    <None Include="AddStudentImage-FourHouses.jpg" />
+    <None Include="HogwartsCrest.png" />
+    <None Include="AddBookMenubackground-MagicLine.png" />
+    <None Include="BookLayout.png" />
+    <None Include="AddBookMenuImage-FoldedPages - Copy.jpg" />
+    <None Include="AddBookMenuImage-FoldedPages - Lighter.jpg" />
     <Content Include="Redemptions.xml" />
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
