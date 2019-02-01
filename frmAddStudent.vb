@@ -31,32 +31,37 @@ Public Class frmStudentAddition
     End Sub
 
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
-        Dim grade As Integer
-        'transferStudent = frmLauncher.studentdt
-        grade = Val(Me.txtPass.Text)
 
-        Dim row As String()
-        row = (New String() {txtId.Text, txtFirstName.Text, txtLastName.Text, cmbSchool.Text, grade, txtEmail.Text})
-        studentdt.Rows.Add(row)
+        If txtFirstName.Text = Nothing Or txtLastName.Text = Nothing Or txtSchool.Text = Nothing Or txtEmail.Text = Nothing Then
+            ' Display a MsgBox asking the user to save changes or abort.
+            If MessageBox.Show("Fileds have been left blank. Are you sure you want to continue adding this student?", "Blank Fields", MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
-        dgvStudent.DataSource = studentdt
+                Dim grade As Integer
+                grade = Val(Me.txtPass.Text)
 
-        'Clear display for new student information input
-        Me.txtEmail.Text = Nothing
-        Me.txtFirstName.Text = Nothing
-        studentid = dgvStudent.RowCount
-        Me.txtId.Text = studentid
-        Me.txtLastName.Text = Nothing
-        Me.cmbSchool.Text = Nothing
+                Dim row As String()
+                row = (New String() {txtId.Text, txtFirstName.Text, txtLastName.Text, cmbSchool.Text, grade, txtEmail.Text})
+                studentdt.Rows.Add(row)
+
+                dgvStudent.DataSource = studentdt
+
+                'Clear display for new student information input
+                Me.txtEmail.Text = Nothing
+                Me.txtFirstName.Text = Nothing
+                studentid = dgvStudent.RowCount
+                Me.txtId.Text = studentid
+                Me.txtLastName.Text = Nothing
+                Me.cmbSchool.Text = Nothing
+            End If
+        End If
+
+
     End Sub
 
+    'Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
     Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
 
         Me.Hide()
-        frmLauncher.DataGridView2.Visible = False
-        frmLauncher.dgvStudent.Visible = True
-        frmLauncher.btnRedeamAfterStudent.Visible = True
-        frmLauncher.btnFullRedeam.Visible = False
 
         'Save Students to XML
         studentdt = CType(dgvStudent.DataSource, DataTable)
@@ -107,4 +112,6 @@ Public Class frmStudentAddition
 
         End If
     End Function
+
+
 End Class

@@ -56,6 +56,7 @@ Partial Class frmLauncher
         Me.dgvStudent = New System.Windows.Forms.DataGridView()
         Me.btnRedeamAfterStudent = New System.Windows.Forms.Button()
         Me.dgvBook = New System.Windows.Forms.DataGridView()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +68,7 @@ Partial Class frmLauncher
         Me.MenuStrip.SuspendLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtBookSearch
@@ -139,18 +141,18 @@ Partial Class frmLauncher
         '
         'btnBookTable
         '
-        Me.btnBookTable.Location = New System.Drawing.Point(478, 31)
+        Me.btnBookTable.Location = New System.Drawing.Point(486, 32)
         Me.btnBookTable.Name = "btnBookTable"
-        Me.btnBookTable.Size = New System.Drawing.Size(75, 23)
+        Me.btnBookTable.Size = New System.Drawing.Size(84, 23)
         Me.btnBookTable.TabIndex = 8
         Me.btnBookTable.Text = "Book Table"
         Me.btnBookTable.UseVisualStyleBackColor = True
         '
         'btnStudentTable
         '
-        Me.btnStudentTable.Location = New System.Drawing.Point(388, 31)
+        Me.btnStudentTable.Location = New System.Drawing.Point(397, 33)
         Me.btnStudentTable.Name = "btnStudentTable"
-        Me.btnStudentTable.Size = New System.Drawing.Size(84, 23)
+        Me.btnStudentTable.Size = New System.Drawing.Size(84, 24)
         Me.btnStudentTable.TabIndex = 9
         Me.btnStudentTable.Text = "Student Table"
         Me.btnStudentTable.UseVisualStyleBackColor = True
@@ -305,7 +307,7 @@ Partial Class frmLauncher
         'dgvStudent
         '
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvStudent.Location = New System.Drawing.Point(30, 126)
+        Me.dgvStudent.Location = New System.Drawing.Point(30, 127)
         Me.dgvStudent.Name = "dgvStudent"
         Me.dgvStudent.ReadOnly = True
         Me.dgvStudent.Size = New System.Drawing.Size(367, 198)
@@ -330,6 +332,17 @@ Partial Class frmLauncher
         Me.dgvBook.Size = New System.Drawing.Size(356, 191)
         Me.dgvBook.TabIndex = 26
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.E_stricted_Section_edited_book_cover_logo
+        Me.PictureBox2.Location = New System.Drawing.Point(851, 495)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(106, 91)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 28
+        Me.PictureBox2.TabStop = False
+        '
         'frmLauncher
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -338,6 +351,7 @@ Partial Class frmLauncher
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.BackgroundImage_Parchment
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(957, 600)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.dgvBook)
         Me.Controls.Add(Me.btnRedeamAfterStudent)
         Me.Controls.Add(Me.dgvStudent)
@@ -365,7 +379,7 @@ Partial Class frmLauncher
         Me.Controls.Add(Me.MenuStrip)
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frmLauncher"
-        Me.Text = "Restricted Section"
+        Me.Text = "E-stricted Section"
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -378,6 +392,7 @@ Partial Class frmLauncher
         Me.MenuStrip.PerformLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -415,4 +430,5 @@ Partial Class frmLauncher
     Friend WithEvents dgvStudent As System.Windows.Forms.DataGridView
     Friend WithEvents btnRedeamAfterStudent As System.Windows.Forms.Button
     Friend WithEvents dgvBook As System.Windows.Forms.DataGridView
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
 End Class

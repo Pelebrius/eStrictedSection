@@ -203,6 +203,7 @@
     <None Include="BookLayout.png" />
     <None Include="AddBookMenuImage-FoldedPages - Copy.jpg" />
     <None Include="AddBookMenuImage-FoldedPages - Lighter.jpg" />
+    <None Include="E-stricted Section edited book cover logo.jpg" />
     <Content Include="Redemptions.xml" />
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>

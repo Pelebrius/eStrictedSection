@@ -29,19 +29,27 @@
     End Sub
 
     Private Sub btnAddBook_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddBook.Click
-        Dim row As String()
-        row = (New String() {txtBookID.Text, txtBookTitle.Text, txtAuthor.Text, txtBookSubject.Text})
-        bookdt.Rows.Add(row)
 
-        dgvBook.DataSource = bookdt
+        If txtBookTitle.Text = Nothing Or txtAuthor.Text = Nothing Or txtBookSubject.Text = Nothing Then
+            ' Display a MsgBox asking the user to save changes or abort.
+            If MessageBox.Show("Fileds have been left blank. Are you sure you want to continue adding this book?", "Blank Fields", MessageBoxButtons.YesNo) = DialogResult.Yes Then
 
-        'Clear display for new student information input
-        Me.txtBookID.Text = Nothing
-        Me.txtBookTitle.Text = Nothing
-        bookId = dgvBook.RowCount
-        Me.txtBookID.Text = bookId
-        Me.txtAuthor.Text = Nothing
-        Me.txtBookSubject.Text = Nothing
+                Dim row As String()
+                row = (New String() {txtBookID.Text, txtBookTitle.Text, txtAuthor.Text, txtBookSubject.Text})
+                bookdt.Rows.Add(row)
+
+                dgvBook.DataSource = bookdt
+
+                'Clear display for new student information input
+                Me.txtBookID.Text = Nothing
+                Me.txtBookTitle.Text = Nothing
+                bookId = dgvBook.RowCount
+                Me.txtBookID.Text = bookId
+                Me.txtAuthor.Text = Nothing
+                Me.txtBookSubject.Text = Nothing
+            End If
+        End If
+
     End Sub
 
     Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
