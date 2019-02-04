@@ -48,6 +48,20 @@
                 Me.txtAuthor.Text = Nothing
                 Me.txtBookSubject.Text = Nothing
             End If
+        Else
+            Dim row As String()
+            row = (New String() {txtBookID.Text, txtBookTitle.Text, txtAuthor.Text, txtBookSubject.Text})
+            bookdt.Rows.Add(row)
+
+            dgvBook.DataSource = bookdt
+
+            'Clear display for new student information input
+            Me.txtBookID.Text = Nothing
+            Me.txtBookTitle.Text = Nothing
+            bookId = dgvBook.RowCount
+            Me.txtBookID.Text = bookId
+            Me.txtAuthor.Text = Nothing
+            Me.txtBookSubject.Text = Nothing
         End If
 
     End Sub

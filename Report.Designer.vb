@@ -25,7 +25,6 @@ Partial Class Report
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Report))
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.txtReport = New System.Windows.Forms.TextBox()
-        Me.dgvReport = New System.Windows.Forms.DataGridView()
         Me.lblReportTitle = New System.Windows.Forms.Label()
         Me.txtDate = New System.Windows.Forms.TextBox()
         Me.lblBookTitle = New System.Windows.Forms.Label()
@@ -33,8 +32,9 @@ Partial Class Report
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.dgvReport = New System.Windows.Forms.DataGridView()
         Me.MenuStrip.SuspendLayout()
+        CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
@@ -56,15 +56,6 @@ Partial Class Report
         Me.txtReport.Size = New System.Drawing.Size(371, 393)
         Me.txtReport.TabIndex = 2
         '
-        'dgvReport
-        '
-        Me.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReport.Location = New System.Drawing.Point(12, 30)
-        Me.dgvReport.Name = "dgvReport"
-        Me.dgvReport.Size = New System.Drawing.Size(20, 19)
-        Me.dgvReport.TabIndex = 0
-        Me.dgvReport.Visible = False
-        '
         'lblReportTitle
         '
         Me.lblReportTitle.BackColor = System.Drawing.Color.Transparent
@@ -82,7 +73,8 @@ Partial Class Report
         Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDate.Location = New System.Drawing.Point(12, 70)
         Me.txtDate.Name = "txtDate"
-        Me.txtDate.Size = New System.Drawing.Size(70, 20)
+        Me.txtDate.ReadOnly = True
+        Me.txtDate.Size = New System.Drawing.Size(114, 20)
         Me.txtDate.TabIndex = 4
         Me.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -115,7 +107,7 @@ Partial Class Report
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(428, 25)
+        Me.MenuStrip.Size = New System.Drawing.Size(432, 25)
         Me.MenuStrip.TabIndex = 19
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -133,13 +125,22 @@ Partial Class Report
         Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.HomeToolStripMenuItem.Text = "Home"
         '
+        'dgvReport
+        '
+        Me.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvReport.Location = New System.Drawing.Point(12, 28)
+        Me.dgvReport.Name = "dgvReport"
+        Me.dgvReport.Size = New System.Drawing.Size(28, 24)
+        Me.dgvReport.TabIndex = 0
+        Me.dgvReport.Visible = False
+        '
         'Report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(428, 528)
+        Me.ClientSize = New System.Drawing.Size(432, 528)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.lblStudentName)
         Me.Controls.Add(Me.lblBookTitle)
@@ -149,16 +150,15 @@ Partial Class Report
         Me.Controls.Add(Me.dgvReport)
         Me.Name = "Report"
         Me.Text = "Report"
-        CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents txtReport As System.Windows.Forms.TextBox
-    Friend WithEvents dgvReport As System.Windows.Forms.DataGridView
     Friend WithEvents lblReportTitle As System.Windows.Forms.Label
     Friend WithEvents txtDate As System.Windows.Forms.TextBox
     Friend WithEvents lblBookTitle As System.Windows.Forms.Label
@@ -166,4 +166,5 @@ Partial Class Report
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents MenuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HomeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents dgvReport As System.Windows.Forms.DataGridView
 End Class

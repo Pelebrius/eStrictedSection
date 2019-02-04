@@ -32,10 +32,9 @@ Public Class frmStudentAddition
 
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
 
-        If txtFirstName.Text = Nothing Or txtLastName.Text = Nothing Or txtSchool.Text = Nothing Or txtEmail.Text = Nothing Then
+        If txtFirstName.Text = Nothing Or txtLastName.Text = Nothing Or cmbSchool.Text = Nothing Or txtEmail.Text = Nothing Or txtPass.Text = Nothing Then
             ' Display a MsgBox asking the user to save changes or abort.
             If MessageBox.Show("Fileds have been left blank. Are you sure you want to continue adding this student?", "Blank Fields", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-
                 Dim grade As Integer
                 grade = Val(Me.txtPass.Text)
 
@@ -52,7 +51,38 @@ Public Class frmStudentAddition
                 Me.txtId.Text = studentid
                 Me.txtLastName.Text = Nothing
                 Me.cmbSchool.Text = Nothing
+                Me.radFirst.Checked = False
+                Me.radSecond.Checked = False
+                Me.radThird.Checked = False
+                Me.radFourth.Checked = False
+                Me.radFifth.Checked = False
+                Me.radSixth.Checked = False
+                Me.radSeventh.Checked = False
             End If
+        Else
+            Dim grade As Integer
+            grade = Val(Me.txtPass.Text)
+
+            Dim row As String()
+            row = (New String() {txtId.Text, txtFirstName.Text, txtLastName.Text, cmbSchool.Text, grade, txtEmail.Text})
+            studentdt.Rows.Add(row)
+
+            dgvStudent.DataSource = studentdt
+
+            'Clear display for new student information input
+            Me.txtEmail.Text = Nothing
+            Me.txtFirstName.Text = Nothing
+            studentid = dgvStudent.RowCount
+            Me.txtId.Text = studentid
+            Me.txtLastName.Text = Nothing
+            Me.cmbSchool.Text = Nothing
+            Me.radFirst.Checked = False
+            Me.radSecond.Checked = False
+            Me.radThird.Checked = False
+            Me.radFourth.Checked = False
+            Me.radFifth.Checked = False
+            Me.radSixth.Checked = False
+            Me.radSeventh.Checked = False
         End If
 
 

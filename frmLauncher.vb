@@ -85,8 +85,6 @@ Public Class frmLauncher
     Private Sub frmLauncher_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
 
-
-
             'Read Book Table XML
         Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book - Copy.xml"
             BookDataSet.ReadXml(filePath)
@@ -141,7 +139,8 @@ Public Class frmLauncher
 
         End With
 
-            'Creating Columns for Redemption Table
+        'Creating Columns for Redemption Table
+        dt.Columns.Add("RedemptionDate", GetType(String))
             dt.Columns.Add("RedemptionID", GetType(String))
             dt.Columns.Add("BookID", GetType(String))
             dt.Columns.Add("BookTitle", GetType(String))
@@ -284,9 +283,9 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
     End Sub
 
     Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click
+        'Load DataGridView from launcher page to Report page
         Report.dgvReport.DataSource = DataGridView3.DataSource
         Report.Show()
-       
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveToolStripMenuItem.Click
@@ -303,7 +302,6 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
     Private Sub ReportToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportToolStripMenuItem.Click
         Report.dgvReport.DataSource = DataGridView3.DataSource
         Report.Show()
-        'Me.Hide()
     End Sub
 
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
@@ -370,7 +368,7 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
         Dim row As String()
 
-        row = New String() {id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
+        row = New String() {System.DateTime.Now.ToString("dd/MMMM/yyyy"), id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
         dt.Rows.Add(row)
 
 

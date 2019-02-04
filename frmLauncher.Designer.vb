@@ -215,10 +215,10 @@ Partial Class frmLauncher
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(200, 360)
+        Me.DataGridView3.Location = New System.Drawing.Point(156, 359)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.ReadOnly = True
-        Me.DataGridView3.Size = New System.Drawing.Size(564, 229)
+        Me.DataGridView3.Size = New System.Drawing.Size(662, 229)
         Me.DataGridView3.TabIndex = 17
         '
         'RedeamDataSet
@@ -309,7 +309,6 @@ Partial Class frmLauncher
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvStudent.Location = New System.Drawing.Point(30, 127)
         Me.dgvStudent.Name = "dgvStudent"
-        Me.dgvStudent.ReadOnly = True
         Me.dgvStudent.Size = New System.Drawing.Size(367, 198)
         Me.dgvStudent.TabIndex = 24
         '
