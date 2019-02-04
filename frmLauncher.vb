@@ -77,7 +77,7 @@ Public Class frmLauncher
 
     Private Sub frmLauncher_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         'Prompt user to make sure all saved changes are in fact saved
-        If MessageBox.Show("Are you sure you want to close this application? All unsaved redemptions will be lost", "Leaving the Restricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to leave the E-Stricted Section? All unsaved redemptions will be lost.", "Leaving the Restricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
         Else
             e.Cancel = True
         End If
@@ -189,103 +189,42 @@ Public Class frmLauncher
             DataGridView3.Rows(0).Selected = True
 
         'Order Redemption Id's in ascending order
-        DataGridView3.Sort(DataGridView3.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        DataGridView3.Sort(DataGridView3.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
 
-    End Sub
-
-    Private Sub btnFullRedeam_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnFullRedeam.Click
-        'New Total value of rows
-
-        'Gather Student Name from Selected Student Table
-        Dim selectedRowCount As Integer = _
-DataGridView2.Rows.GetRowCount(DataGridViewElementStates.Selected)
-        Dim studentID As Integer
-
-        If selectedRowCount > 0 Then
-
-            Dim sb As New System.Text.StringBuilder()
-
-            Dim i As Integer
-            For i = 0 To selectedRowCount - 1
-
-                sb.Append("Row: ")
-                sb.Append(DataGridView2.SelectedRows(i).Index.ToString())
-                sb.Append(Environment.NewLine)
-                'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
-                selectedRowIndex = DataGridView2.SelectedRows(i).Index()
-            Next i
-            sb.Append("Total: " + selectedRowCount.ToString())
-            studentFirstName = CStr(DataGridView2("First Name", selectedRowIndex).Value)
-            studentLastName = CStr(DataGridView2("Last Name", selectedRowIndex).Value)
-            studentID = CStr(DataGridView2("Student ID", selectedRowIndex).Value)
-        End If
-
-        'Gather Title from Selected Book Table
-        Dim selectedRowCount1 As Integer = _
-DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
-
-        Dim selectedRowIndex1 As Integer
-        Dim bookTitle As String
-        Dim bookID As Integer
-
-        If selectedRowCount1 > 0 Then
-
-            Dim sb As New System.Text.StringBuilder()
-
-            Dim i As Integer
-            For i = 0 To selectedRowCount1 - 1
-
-                sb.Append("Row: ")
-                sb.Append(DataGridView1.SelectedRows(i).Index.ToString())
-                sb.Append(Environment.NewLine)
-                'MessageBox.Show(DataGridView1.Rows(i).Cells(1).Value)
-                selectedRowIndex1 = DataGridView1.SelectedRows(i).Index()
-            Next i
-            sb.Append("Total: " + selectedRowCount1.ToString())
-            bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
-            bookID = CStr(DataGridView1("BookId", selectedRowIndex1).Value)
-        End If
-
-        bookTitle = CStr(DataGridView1("Title", selectedRowIndex1).Value)
-
-        Dim id As String = Format(Date.Now(), "yyyyMMddHHmmssfff")
-        id = id.Remove(0, 5)
-
-        Dim row As String()
-
-        row = New String() {id, bookID, bookTitle, studentID, studentFirstName & " " & studentLastName}
-        dt.Rows.Add(row)
-
-
-        DataGridView3.DataSource = dt
     End Sub
 
     Private Sub btnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSave.Click
-        'Save to XML
+        'Save Redemption to XML
         dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
         dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
-
-        'studentdt = CType(dgvStudent.DataSource, DataTable)
-        'studentdt.AcceptChanges()
-        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
+        'Find Selected Row count
+        Dim iRowIndex As Integer
+
+        For i As Integer = 0 To Me.DataGridView3.SelectedCells.Count - 1
+            iRowIndex = Me.DataGridView3.SelectedCells.Item(i).RowIndex
+        Next
+
         'Delete Selected Record
         If DataGridView3.SelectedRows.Count > 0 Then
-            DataGridView3.Rows.Remove(DataGridView3.SelectedRows(0))
-            DataGridView3.Rows(0).Selected = True
-        Else
-            MessageBox.Show("Select 1 row before you hit delete")
+            If (iRowIndex) < (DataGridView3.RowCount - 1) Then
+                DataGridView3.Rows.Remove(DataGridView3.SelectedRows(0))
+                DataGridView3.Rows(0).Selected = True
+            End If
         End If
+
     End Sub
 
     Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click
         'Load DataGridView from launcher page to Report page
-        Report.dgvReport.DataSource = DataGridView3.DataSource
-        Report.Show()
+        'Report.dgvReport.DataSource = DataGridView3.DataSource
+        If MessageBox.Show("Have you saved your data? You must save your data before viewing the report.", "Save Data", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            Report.Show()
+        End If
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveToolStripMenuItem.Click
@@ -294,22 +233,25 @@ DataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected)
         dt.AcceptChanges()
         dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
-        'studentdt = CType(dgvStudent.DataSource, DataTable)
-        'studentdt.AcceptChanges()
-        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
     Private Sub ReportToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportToolStripMenuItem.Click
-        Report.dgvReport.DataSource = DataGridView3.DataSource
-        Report.Show()
+        'Make sure Redemptions are saved (Necesary for report to work properly)
+        If MessageBox.Show("Have you saved your data? You must save your data before viewing the report.", "Save Data", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+            Report.Show()
+        End If
     End Sub
 
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
+        'Display Add Student Form
         frmStudentAddition.Show()
         Me.Hide()
     End Sub
 
     Private Sub btnRedeamAfterStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRedeamAfterStudent.Click
+
+        'Order Redemption Id's in ascending order
+        DataGridView3.Sort(DataGridView3.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
 
         'Gather Student Name from Selected Student Table
         Dim selectedRowCount As Integer = _
@@ -364,7 +306,6 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
         bookTitle = CStr(dgvBook("Title", selectedRowIndex1).Value)
 
         Dim id As String = Format(Date.Now(), "yyyyMMddHHmmssfff")
-        id = id.Remove(14, 3)
 
         Dim row As String()
 

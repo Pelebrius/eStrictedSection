@@ -66,4 +66,10 @@
     <Author>Newt Scamander</Author>
     <Subject>Nonfiction</Subject>
   </Book>
+  <Book>
+    <BookId>9</BookId>
+    <Title>Lucky Lycanthropy</Title>
+    <Author>Remus Lupin</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
 </NewDataSet>

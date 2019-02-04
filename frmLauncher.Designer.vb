@@ -217,7 +217,6 @@ Partial Class frmLauncher
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(156, 359)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.ReadOnly = True
         Me.DataGridView3.Size = New System.Drawing.Size(662, 229)
         Me.DataGridView3.TabIndex = 17
         '
@@ -248,11 +247,11 @@ Partial Class frmLauncher
         'btnReport
         '
         Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.Location = New System.Drawing.Point(445, 274)
+        Me.btnReport.Location = New System.Drawing.Point(425, 276)
         Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(75, 23)
+        Me.btnReport.Size = New System.Drawing.Size(117, 23)
         Me.btnReport.TabIndex = 20
-        Me.btnReport.Text = "Report"
+        Me.btnReport.Text = "Weekly Report"
         Me.btnReport.UseVisualStyleBackColor = True
         '
         'MenuStrip

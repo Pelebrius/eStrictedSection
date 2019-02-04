@@ -33,6 +33,12 @@ Partial Class Report
         Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvReport = New System.Windows.Forms.DataGridView()
+        Me.dtpStart = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEnd = New System.Windows.Forms.DateTimePicker()
+        Me.btnNextWeek = New System.Windows.Forms.Button()
+        Me.btnPriorWeek = New System.Windows.Forms.Button()
+        Me.lblStartWeek = New System.Windows.Forms.Label()
+        Me.lblEndDate = New System.Windows.Forms.Label()
         Me.MenuStrip.SuspendLayout()
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -48,7 +54,7 @@ Partial Class Report
         '
         Me.txtReport.BackColor = System.Drawing.Color.Tan
         Me.txtReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtReport.Location = New System.Drawing.Point(30, 123)
+        Me.txtReport.Location = New System.Drawing.Point(30, 162)
         Me.txtReport.Multiline = True
         Me.txtReport.Name = "txtReport"
         Me.txtReport.ReadOnly = True
@@ -71,7 +77,7 @@ Partial Class Report
         '
         Me.txtDate.BackColor = System.Drawing.Color.Tan
         Me.txtDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDate.Location = New System.Drawing.Point(12, 70)
+        Me.txtDate.Location = New System.Drawing.Point(12, 61)
         Me.txtDate.Name = "txtDate"
         Me.txtDate.ReadOnly = True
         Me.txtDate.Size = New System.Drawing.Size(114, 20)
@@ -82,7 +88,7 @@ Partial Class Report
         '
         Me.lblBookTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblBookTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBookTitle.Location = New System.Drawing.Point(179, 97)
+        Me.lblBookTitle.Location = New System.Drawing.Point(179, 136)
         Me.lblBookTitle.Name = "lblBookTitle"
         Me.lblBookTitle.Size = New System.Drawing.Size(100, 23)
         Me.lblBookTitle.TabIndex = 5
@@ -93,7 +99,7 @@ Partial Class Report
         '
         Me.lblStudentName.BackColor = System.Drawing.Color.Transparent
         Me.lblStudentName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudentName.Location = New System.Drawing.Point(26, 97)
+        Me.lblStudentName.Location = New System.Drawing.Point(26, 136)
         Me.lblStudentName.Name = "lblStudentName"
         Me.lblStudentName.Size = New System.Drawing.Size(131, 23)
         Me.lblStudentName.TabIndex = 6
@@ -107,7 +113,7 @@ Partial Class Report
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
-        Me.MenuStrip.Size = New System.Drawing.Size(432, 25)
+        Me.MenuStrip.Size = New System.Drawing.Size(435, 25)
         Me.MenuStrip.TabIndex = 19
         Me.MenuStrip.Text = "MenuStrip1"
         '
@@ -128,11 +134,65 @@ Partial Class Report
         'dgvReport
         '
         Me.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvReport.Location = New System.Drawing.Point(12, 28)
+        Me.dgvReport.Location = New System.Drawing.Point(16, 28)
         Me.dgvReport.Name = "dgvReport"
-        Me.dgvReport.Size = New System.Drawing.Size(28, 24)
+        Me.dgvReport.Size = New System.Drawing.Size(35, 24)
         Me.dgvReport.TabIndex = 0
         Me.dgvReport.Visible = False
+        '
+        'dtpStart
+        '
+        Me.dtpStart.Location = New System.Drawing.Point(12, 113)
+        Me.dtpStart.Name = "dtpStart"
+        Me.dtpStart.Size = New System.Drawing.Size(200, 20)
+        Me.dtpStart.TabIndex = 20
+        '
+        'dtpEnd
+        '
+        Me.dtpEnd.Location = New System.Drawing.Point(222, 113)
+        Me.dtpEnd.Name = "dtpEnd"
+        Me.dtpEnd.Size = New System.Drawing.Size(200, 20)
+        Me.dtpEnd.TabIndex = 21
+        '
+        'btnNextWeek
+        '
+        Me.btnNextWeek.Location = New System.Drawing.Point(222, 84)
+        Me.btnNextWeek.Name = "btnNextWeek"
+        Me.btnNextWeek.Size = New System.Drawing.Size(75, 23)
+        Me.btnNextWeek.TabIndex = 23
+        Me.btnNextWeek.Text = "Next Week"
+        Me.btnNextWeek.UseVisualStyleBackColor = True
+        '
+        'btnPriorWeek
+        '
+        Me.btnPriorWeek.Location = New System.Drawing.Point(137, 84)
+        Me.btnPriorWeek.Name = "btnPriorWeek"
+        Me.btnPriorWeek.Size = New System.Drawing.Size(75, 23)
+        Me.btnPriorWeek.TabIndex = 24
+        Me.btnPriorWeek.Text = "Prior Week"
+        Me.btnPriorWeek.UseVisualStyleBackColor = True
+        '
+        'lblStartWeek
+        '
+        Me.lblStartWeek.AutoSize = True
+        Me.lblStartWeek.BackColor = System.Drawing.Color.Transparent
+        Me.lblStartWeek.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStartWeek.Location = New System.Drawing.Point(13, 94)
+        Me.lblStartWeek.Name = "lblStartWeek"
+        Me.lblStartWeek.Size = New System.Drawing.Size(77, 16)
+        Me.lblStartWeek.TabIndex = 25
+        Me.lblStartWeek.Text = "Start Date"
+        '
+        'lblEndDate
+        '
+        Me.lblEndDate.AutoSize = True
+        Me.lblEndDate.BackColor = System.Drawing.Color.Transparent
+        Me.lblEndDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEndDate.Location = New System.Drawing.Point(351, 94)
+        Me.lblEndDate.Name = "lblEndDate"
+        Me.lblEndDate.Size = New System.Drawing.Size(72, 16)
+        Me.lblEndDate.TabIndex = 26
+        Me.lblEndDate.Text = "End Date"
         '
         'Report
         '
@@ -140,7 +200,13 @@ Partial Class Report
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(432, 528)
+        Me.ClientSize = New System.Drawing.Size(435, 566)
+        Me.Controls.Add(Me.lblEndDate)
+        Me.Controls.Add(Me.lblStartWeek)
+        Me.Controls.Add(Me.btnPriorWeek)
+        Me.Controls.Add(Me.btnNextWeek)
+        Me.Controls.Add(Me.dtpEnd)
+        Me.Controls.Add(Me.dtpStart)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.lblStudentName)
         Me.Controls.Add(Me.lblBookTitle)
@@ -167,4 +233,10 @@ Partial Class Report
     Friend WithEvents MenuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HomeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents dgvReport As System.Windows.Forms.DataGridView
+    Friend WithEvents dtpStart As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpEnd As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnNextWeek As System.Windows.Forms.Button
+    Friend WithEvents btnPriorWeek As System.Windows.Forms.Button
+    Friend WithEvents lblStartWeek As System.Windows.Forms.Label
+    Friend WithEvents lblEndDate As System.Windows.Forms.Label
 End Class
