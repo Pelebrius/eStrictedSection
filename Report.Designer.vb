@@ -148,20 +148,22 @@ Partial Class Report
         '
         'btnNextWeek
         '
+        Me.btnNextWeek.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNextWeek.Location = New System.Drawing.Point(222, 84)
         Me.btnNextWeek.Name = "btnNextWeek"
-        Me.btnNextWeek.Size = New System.Drawing.Size(75, 23)
+        Me.btnNextWeek.Size = New System.Drawing.Size(104, 23)
         Me.btnNextWeek.TabIndex = 23
-        Me.btnNextWeek.Text = "Next Week"
+        Me.btnNextWeek.Text = "Next Week >"
         Me.btnNextWeek.UseVisualStyleBackColor = True
         '
         'btnPriorWeek
         '
-        Me.btnPriorWeek.Location = New System.Drawing.Point(137, 84)
+        Me.btnPriorWeek.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPriorWeek.Location = New System.Drawing.Point(107, 84)
         Me.btnPriorWeek.Name = "btnPriorWeek"
-        Me.btnPriorWeek.Size = New System.Drawing.Size(75, 23)
+        Me.btnPriorWeek.Size = New System.Drawing.Size(105, 23)
         Me.btnPriorWeek.TabIndex = 24
-        Me.btnPriorWeek.Text = "Prior Week"
+        Me.btnPriorWeek.Text = "< Prior Week"
         Me.btnPriorWeek.UseVisualStyleBackColor = True
         '
         'lblStartWeek

@@ -7,7 +7,7 @@ Public Class frmStudentAddition
     Private Sub frmStudentAddition_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         'Create colums for student Table
-        studentdt.Columns.Add("Student ID", GetType(String))
+        studentdt.Columns.Add("Student ID", GetType(Integer))
         studentdt.Columns.Add("First Name", GetType(String))
         studentdt.Columns.Add("Last Name", GetType(String))
         studentdt.Columns.Add("School", GetType(String))
@@ -20,47 +20,30 @@ Public Class frmStudentAddition
             .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
         End With
 
+        With Me.dgvStudent
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
+
         'Load and Read Student XML
         'studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml")
         studentdt.ReadXml("student.xml")
         dgvStudent.DataSource = studentdt
 
         'Generate Student ID
-        studentid = dgvStudent.RowCount
+        studentid = Val(dgvStudent.RowCount)
         txtId.Text = studentid
 
+        'Sort Table by most recent student
+        dgvStudent.Sort(dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
     End Sub
 
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
 
         If txtFirstName.Text = Nothing Or txtLastName.Text = Nothing Or cmbSchool.Text = Nothing Or txtEmail.Text = Nothing Or txtPass.Text = Nothing Then
             ' Display a MsgBox asking the user to save changes or abort.
-            If MessageBox.Show("Fileds have been left blank. Are you sure you want to continue adding this student?", "Blank Fields", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-                Dim grade As Integer
-                grade = Val(Me.txtPass.Text)
-
-                Dim row As String()
-                row = (New String() {txtId.Text, txtFirstName.Text, txtLastName.Text, cmbSchool.Text, grade, txtEmail.Text})
-                studentdt.Rows.Add(row)
-
-                dgvStudent.DataSource = studentdt
-
-                'Clear display for new student information input
-                Me.txtEmail.Text = Nothing
-                Me.txtFirstName.Text = Nothing
-                studentid = dgvStudent.RowCount
-                Me.txtId.Text = studentid
-                Me.txtLastName.Text = Nothing
-                Me.cmbSchool.Text = Nothing
-                Me.radFirst.Checked = False
-                Me.radSecond.Checked = False
-                Me.radThird.Checked = False
-                Me.radFourth.Checked = False
-                Me.radFifth.Checked = False
-                Me.radSixth.Checked = False
-                Me.radSeventh.Checked = False
-            End If
-        Else
+            MessageBox.Show("Cannot Add Student. Fields Left Blank.", "Blank Fields")
+        ElseIf txtFirstName.Text <> Nothing And txtLastName.Text <> Nothing And cmbSchool.Text <> Nothing And txtEmail.Text <> Nothing And txtPass.Text <> Nothing Then
             Dim grade As Integer
             grade = Val(Me.txtPass.Text)
 
@@ -70,10 +53,18 @@ Public Class frmStudentAddition
 
             dgvStudent.DataSource = studentdt
 
+            'Sort Table by most recent student
+            dgvStudent.Sort(dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+
+            'Select most recent student
+            Me.dgvStudent.Rows(0).Selected = True
+
+            MessageBox.Show("Student Successfully Added.", "Success")
+
             'Clear display for new student information input
             Me.txtEmail.Text = Nothing
             Me.txtFirstName.Text = Nothing
-            studentid = dgvStudent.RowCount
+            studentid = Val(dgvStudent.RowCount)
             Me.txtId.Text = studentid
             Me.txtLastName.Text = Nothing
             Me.cmbSchool.Text = Nothing
@@ -85,7 +76,6 @@ Public Class frmStudentAddition
             Me.radSixth.Checked = False
             Me.radSeventh.Checked = False
         End If
-
 
     End Sub
 
@@ -120,14 +110,10 @@ Public Class frmStudentAddition
         If EmailAddressCheck(email) = False Then
 
             Dim result As DialogResult _
-            = MessageBox.Show("The email address you entered is not valid." & _
-                                       " Do you want to re-enter it?", "Invalid Email Address", _
-                                       MessageBoxButtons.YesNo, MessageBoxIcon.Error)
-            If result = Windows.Forms.DialogResult.Yes Then
-                e.Cancel = True
-            End If
-
+            = MessageBox.Show("The email address you entered is not valid.", "Invalid Email Address")
+            e.Cancel = True
         End If
+
 
 
     End Sub

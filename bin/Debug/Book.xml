@@ -1,51 +1,75 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Book.xsd" generated="2018-12-28T15:10:27">
-<Book>
-<BookId>1</BookId>
-<Title>A Magical Me</Title>
-<Author>Gilderoy Lockheart</Author>
-<Subject>Biography</Subject>
-</Book>
-<Book>
-<BookId>2</BookId>
-<Title>Prolific Potions</Title>
-<Author>Snape</Author>
-<Subject>Fantasy</Subject>
-</Book>
-<Book>
-<BookId>3</BookId>
-<Title>Guide to Flying</Title>
-<Author>Hooch</Author>
-<Subject>Fantasy</Subject>
-</Book>
-<Book>
-<BookId>4</BookId>
-<Title>Captivating Cartography</Title>
-<Author>Flourish</Author>
-<Subject>Fantasy</Subject>
-</Book>
-<Book>
-<BookId>5</BookId>
-<Title>Enchanting Charms</Title>
-<Author>Flitwick</Author>
-<Subject>Fantasy</Subject>
-</Book>
-<Book>
-<BookId>6</BookId>
-<Title>Simple Sorcery</Title>
-<Author>Gilderoy Lockheart</Author>
-<Subject>Fantasy</Subject>
-</Book>
-<Book>
-<BookId>7</BookId>
-<Title>Mind of the Ministry</Title>
-<Author>Cornelius Fudge</Author>
-<Subject>Nonfiction</Subject>
-</Book>
-<Book>
-<BookId>8</BookId>
-<Title>Fantastic Beasts and Where to Find Them</Title>
-<Author>Newt Scamander</Author>
-<Subject>Nonfiction</Subject>
-</Book>
-</dataroot>
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Book" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Book">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="BookId" type="xs:int" minOccurs="0" />
+                <xs:element name="Title" type="xs:string" minOccurs="0" />
+                <xs:element name="Author" type="xs:string" minOccurs="0" />
+                <xs:element name="Subject" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Book>
+    <BookId>1</BookId>
+    <Title>A Magical Me</Title>
+    <Author>Gilderoy Lockheart</Author>
+    <Subject>Biography</Subject>
+  </Book>
+  <Book>
+    <BookId>2</BookId>
+    <Title>Prolific Potions</Title>
+    <Author>Snape</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookId>3</BookId>
+    <Title>Guide to Flying</Title>
+    <Author>Hooch</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookId>4</BookId>
+    <Title>Captivating Cartography</Title>
+    <Author>Flourish</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookId>5</BookId>
+    <Title>Enchanting Charms</Title>
+    <Author>Flitwick</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookId>6</BookId>
+    <Title>Simple Sorcery</Title>
+    <Author>Gilderoy Lockheart</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookId>7</BookId>
+    <Title>Mind of the Ministry</Title>
+    <Author>Cornelius Fudge</Author>
+    <Subject>Nonfiction</Subject>
+  </Book>
+  <Book>
+    <BookId>8</BookId>
+    <Title>Fantastic Beasts and Where to Find Them</Title>
+    <Author>Newt Scamander</Author>
+    <Subject>Nonfiction</Subject>
+  </Book>
+  <Book>
+    <BookId>9</BookId>
+    <Title>Myths and Monsters</Title>
+    <Author>Rascal Boopkins</Author>
+    <Subject>Fiction</Subject>
+  </Book>
+</NewDataSet>

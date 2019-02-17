@@ -1,0 +1,119 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="Student" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Student">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Student_x0020_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="First_x0020_Name" type="xs:string" minOccurs="0" />
+                <xs:element name="Last_x0020_Name" type="xs:string" minOccurs="0" />
+                <xs:element name="School" type="xs:string" minOccurs="0" />
+                <xs:element name="Grade" type="xs:string" minOccurs="0" />
+                <xs:element name="E-Mail" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Student>
+    <Student_x0020_ID>1</Student_x0020_ID>
+    <First_x0020_Name>Harry</First_x0020_Name>
+    <Last_x0020_Name>Potter</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Hpotter@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>2</Student_x0020_ID>
+    <First_x0020_Name>Ron</First_x0020_Name>
+    <Last_x0020_Name>Weasley</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Rweasley@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>3</Student_x0020_ID>
+    <First_x0020_Name>Hermione</First_x0020_Name>
+    <Last_x0020_Name>Granger</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Hgranger@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>4</Student_x0020_ID>
+    <First_x0020_Name>Neville</First_x0020_Name>
+    <Last_x0020_Name>Longbottom</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Nlong@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>5</Student_x0020_ID>
+    <First_x0020_Name>Dean</First_x0020_Name>
+    <Last_x0020_Name>Thomas</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Dthomas@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>6</Student_x0020_ID>
+    <First_x0020_Name>Seamus</First_x0020_Name>
+    <Last_x0020_Name>Finnigan</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Sfinnigan@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>7</Student_x0020_ID>
+    <First_x0020_Name>Tom</First_x0020_Name>
+    <Last_x0020_Name>Riddle</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>5</Grade>
+    <E-Mail>Triddle@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>8</Student_x0020_ID>
+    <First_x0020_Name>Fred</First_x0020_Name>
+    <Last_x0020_Name>Weasley</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>3</Grade>
+    <E-Mail>Fweasley@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>9</Student_x0020_ID>
+    <First_x0020_Name>George</First_x0020_Name>
+    <Last_x0020_Name>Weasley</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>3</Grade>
+    <E-Mail>Gweasley@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>10</Student_x0020_ID>
+    <First_x0020_Name>Draco</First_x0020_Name>
+    <Last_x0020_Name>Malfoy</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>1</Grade>
+    <E-Mail>Dmalfoy@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>11</Student_x0020_ID>
+    <First_x0020_Name>Richard</First_x0020_Name>
+    <Last_x0020_Name>Pendragon</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>6</Grade>
+    <E-Mail>Rpendragon@Wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>12</Student_x0020_ID>
+    <First_x0020_Name>Roger</First_x0020_Name>
+    <Last_x0020_Name>Salazar</Last_x0020_Name>
+    <School>Durmstrang</School>
+    <Grade>3</Grade>
+    <E-Mail>Rsalazar@Wiz.com</E-Mail>
+  </Student>
+</NewDataSet>

@@ -3,7 +3,7 @@
     Public bookdt As New DataTable("Book")
     Private Sub frmAddBook_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Create columns for Book Table
-        bookdt.Columns.Add("BookId", GetType(String))
+        bookdt.Columns.Add("BookId", GetType(Integer))
         bookdt.Columns.Add("Title", GetType(String))
         bookdt.Columns.Add("Author", GetType(String))
         bookdt.Columns.Add("Subject", GetType(String))
@@ -19,6 +19,12 @@
             .MultiSelect = False
         End With
 
+        With Me.dgvBook
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
+
+
         'Load and Read Book XML
         'bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml")
         bookdt.ReadXml("Book.xml")
@@ -27,34 +33,30 @@
         'Generate Book ID
         bookId = dgvBook.RowCount
         txtBookID.Text = bookId
+
+        'Sort Table by most recent book
+        dgvBook.Sort(dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
     End Sub
 
     Private Sub btnAddBook_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddBook.Click
 
         If txtBookTitle.Text = Nothing Or txtAuthor.Text = Nothing Or txtBookSubject.Text = Nothing Then
             ' Display a MsgBox asking the user to save changes or abort.
-            If MessageBox.Show("Fileds have been left blank. Are you sure you want to continue adding this book?", "Blank Fields", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-
-                Dim row As String()
-                row = (New String() {txtBookID.Text, txtBookTitle.Text, txtAuthor.Text, txtBookSubject.Text})
-                bookdt.Rows.Add(row)
-
-                dgvBook.DataSource = bookdt
-
-                'Clear display for new student information input
-                Me.txtBookID.Text = Nothing
-                Me.txtBookTitle.Text = Nothing
-                bookId = dgvBook.RowCount
-                Me.txtBookID.Text = bookId
-                Me.txtAuthor.Text = Nothing
-                Me.txtBookSubject.Text = Nothing
-            End If
-        Else
+            MessageBox.Show("Cannot Add Book. Fields Left Blank.", "Blank Fields")
+        ElseIf txtBookTitle.Text <> Nothing And txtAuthor.Text <> Nothing And txtBookSubject.Text <> Nothing Then
             Dim row As String()
             row = (New String() {txtBookID.Text, txtBookTitle.Text, txtAuthor.Text, txtBookSubject.Text})
             bookdt.Rows.Add(row)
 
             dgvBook.DataSource = bookdt
+
+            'Sort Table by most recent book
+            dgvBook.Sort(dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+
+            'Select most recent book
+            Me.dgvBook.Rows(0).Selected = True
+
+            MessageBox.Show("Book Successfully Added.", "Success")
 
             'Clear display for new student information input
             Me.txtBookID.Text = Nothing
@@ -63,7 +65,8 @@
             Me.txtBookID.Text = bookId
             Me.txtAuthor.Text = Nothing
             Me.txtBookSubject.Text = Nothing
-        End If
+            End If
+
 
     End Sub
 

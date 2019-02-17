@@ -7,7 +7,7 @@
           <xs:element name="Student">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="Student_x0020_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="Student_x0020_ID" type="xs:int" minOccurs="0" />
                 <xs:element name="First_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="Last_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="School" type="xs:string" minOccurs="0" />
@@ -115,5 +115,29 @@
     <School>Durmstrang</School>
     <Grade>3</Grade>
     <E-Mail>Rsalazar@Wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>13</Student_x0020_ID>
+    <First_x0020_Name>Remus</First_x0020_Name>
+    <Last_x0020_Name>Santanis</Last_x0020_Name>
+    <School>Castelobruxo</School>
+    <Grade>7</Grade>
+    <E-Mail>Rsantanis@Wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>14</Student_x0020_ID>
+    <First_x0020_Name>Charles</First_x0020_Name>
+    <Last_x0020_Name>Walkin</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>2</Grade>
+    <E-Mail>Cwalkin@Wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>15</Student_x0020_ID>
+    <First_x0020_Name>Clous</First_x0020_Name>
+    <Last_x0020_Name>Rictoso</Last_x0020_Name>
+    <School>Mahoutokoro</School>
+    <Grade>5</Grade>
+    <E-Mail>Crictosos@wiz.com</E-Mail>
   </Student>
 </NewDataSet>

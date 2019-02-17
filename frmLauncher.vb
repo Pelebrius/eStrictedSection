@@ -12,64 +12,53 @@ Public Class frmLauncher
     Const FLAG As Integer = 1
    
     Private Sub btnBookSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookSearch.Click
-        'Search Book Titles
-        Dim xmlFile As XmlReader
-        'xmlFile = XmlReader.Create("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml", New XmlReaderSettings())
-        xmlFile = XmlReader.Create("Book.xml", New XmlReaderSettings())
-        Dim ds As New DataSet
-        Dim dv As DataView
-        ds.ReadXml(xmlFile)
 
-        dv = New DataView(ds.Tables(0))
-        dv.Sort = "Title"
-        Dim index As Integer = dv.Find(txtBookSearch.Text)
-        lblBookResult.Text = txtBookSearch.Text
+        'Dim Flag As Boolean = True
 
-        If index = -1 Then
-            Me.lblBookResult.Text = ("Item Not Found")
-        Else
-            Me.lblBookResult.Text = (dv(index)("Title").ToString())
-        End If
-
-        'Dim temp As Integer = 0
-        'For i As Integer = 0 To gv.RowCount - 1
-        '    For j As Integer = 0 To gv.ColumnCount - 1
-        '        If gv.Rows(i).Cells(j).Value.ToString = txtBookSearch.Text Then
-        '            MsgBox("Item found")
-        '            temp = 1
-        '        End If
+        'If Flag = True Then
+        '    dgvBook.ClearSelection()
+        '    For Each row As DataGridViewRow In dgvBook.Rows
+        '        For Each cell As DataGridViewCell In row.Cells
+        '            If Not IsNothing(cell.Value) Then
+        '                If cell.Value.ToString.StartsWith(txtBookSearch.Text, StringComparison.InvariantCultureIgnoreCase) Then
+        '                    cell.Selected = True
+        '                    dgvBook.CurrentCell = dgvBook.SelectedCells(0)
+        '                    'Exit For
+        '                End If
+        '            End If
+        '        Next
         '    Next
-        'Next
-        'If temp = 0 Then
-        '    MsgBox("Item not found")
+        'Else
+        '    If txtBookSearch.Text = "" Then
+        '        dgvBook.Rows(0).Selected = True
+        '    End If
         'End If
+
     End Sub
 
     Private Sub btnStudentSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnStudentSearch.Click
-        'Search Student First Names
-        Dim xmlFile As XmlReader
-        'Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
-        Dim filePath As String = "student.xml"
-        'xmlFile = XmlReader.Create("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", New XmlReaderSettings())
-        xmlFile = XmlReader.Create("student.xml", New XmlReaderSettings())
-        Dim ds As New DataSet
-        Dim dv As DataView
-        ds.ReadXml(xmlFile)
 
-        dv = New DataView(ds.Tables(0))
-        dv.Sort = "First Name"
-        'Dim index As Integer = dv.Find(Me.txtBookSearch)
-        Dim index As Integer = dv.Find(txtStudentSearch.Text)
-        lblStudentResult.Text = txtStudentSearch.Text
+        'Dim Flag As Boolean = True
 
-        If index = -1 Then
-            Me.lblStudentResult.Text = ("Item Not Found")
-        Else
-            Me.lblStudentResult.Text = (dv(index)("First Name").ToString() & "  " & dv(index)("Last Name").ToString())
-        End If
-
+        'If Flag = True Then
+        '    dgvStudent.ClearSelection()
+        '    For Each row As DataGridViewRow In dgvStudent.Rows
+        '        For Each cell As DataGridViewCell In row.Cells
+        '            If Not IsNothing(cell.Value) Then
+        '                If cell.Value.ToString.StartsWith(txtStudentSearch.Text, StringComparison.InvariantCultureIgnoreCase) Then
+        '                    cell.Selected = True
+        '                    dgvStudent.CurrentCell = dgvStudent.SelectedCells(0)
+        '                    'Exit For
+        '                End If
+        '            End If
+        '        Next
+        '    Next
+        'Else
+        '    If txtStudentSearch.Text = "" Then
+        '        dgvStudent.Rows(0).Selected = True
+        '    End If
+        'End If
     End Sub
-
     Private Sub btnBookTable_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookTable.Click
         BookTable.Show()
     End Sub
@@ -97,13 +86,13 @@ Public Class frmLauncher
         Dim filePath As String = "Book.xml"
             BookDataSet.ReadXml(filePath)
 
-            DataGridView1.DataSource = BookDataSet
-            DataGridView1.DataMember = "book"
+        dgvBook.DataSource = BookDataSet
+        dgvBook.DataMember = "book"
 
-            With Me.DataGridView1
-                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-                .MultiSelect = False
-            End With
+        With Me.dgvBook
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
 
         'Create columns for Book Table
         bookdt.Columns.Add("BookId", GetType(String))
@@ -123,12 +112,12 @@ Public Class frmLauncher
         Dim filePath1 As String = "student.xml"
             StudentDataSet.ReadXml(filePath1)
 
-            DataGridView2.DataSource = StudentDataSet
-            DataGridView2.DataMember = "student"
+        dgvStudent.DataSource = StudentDataSet
+        dgvStudent.DataMember = "student"
 
-            With Me.DataGridView2
-                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-                .MultiSelect = False
+        With Me.dgvStudent
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
         End With
 
         'Create columns for Student Table
@@ -149,7 +138,7 @@ Public Class frmLauncher
 
         'Creating Columns for Redemption Table
         dt.Columns.Add("RedemptionDate", GetType(String))
-            dt.Columns.Add("RedemptionID", GetType(String))
+        dt.Columns.Add("RedemptionID", GetType(String))
             dt.Columns.Add("BookID", GetType(String))
             dt.Columns.Add("BookTitle", GetType(String))
             dt.Columns.Add("StudentID", GetType(String))
@@ -216,16 +205,19 @@ Public Class frmLauncher
     Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
         'Find Selected Row count
         Dim iRowIndex As Integer
+        Dim total As Integer
+        total = DataGridView3.RowCount - 3
 
         For i As Integer = 0 To Me.DataGridView3.SelectedCells.Count - 1
             iRowIndex = Me.DataGridView3.SelectedCells.Item(i).RowIndex
         Next
 
         'Delete Selected Record
-        If DataGridView3.SelectedRows.Count > 0 Then
+        If DataGridView3.SelectedRows.Count > 0 And MessageBox.Show("Are you sure you want to delete this redemption?", "Delete Redemption", MessageBoxButtons.YesNo) = DialogResult.Yes Then
             If (iRowIndex) < (DataGridView3.RowCount - 1) Then
                 DataGridView3.Rows.Remove(DataGridView3.SelectedRows(0))
-                DataGridView3.Rows(0).Selected = True
+
+                DataGridView3.Rows(total).Selected() = True
             End If
         End If
 
@@ -327,6 +319,12 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
 
         DataGridView3.DataSource = dt
+
+        'Scroll to most recent redemption
+        Me.DataGridView3.FirstDisplayedScrollingRowIndex = Me.DataGridView3.RowCount - 1
+
+        'Select most recent redemption
+        Me.DataGridView3.Rows(Me.DataGridView3.RowCount - 2).Selected = True
     End Sub
 
     Private Sub frmLauncher_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
@@ -359,5 +357,54 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
     Private Sub btnAddBook_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddBook.Click
         frmAddBook.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub txtStudentSearch_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtStudentSearch.TextChanged
+
+        Dim Flag As Boolean = True
+        'Search Student Data Grid for imputed Name and Select it
+        If Flag = True Then
+            dgvStudent.ClearSelection()
+            For Each row As DataGridViewRow In dgvStudent.Rows
+                For Each cell As DataGridViewCell In row.Cells
+                    If Not IsNothing(cell.Value) Then
+                        If cell.Value.ToString.StartsWith(txtStudentSearch.Text, StringComparison.InvariantCultureIgnoreCase) Then
+                            cell.Selected = True
+                            dgvStudent.CurrentCell = dgvStudent.SelectedCells(0)
+                            'Exit For
+                        End If
+                    End If
+                Next
+            Next
+        Else
+            If txtStudentSearch.Text = "" Then
+                dgvStudent.Rows(0).Selected = True
+            End If
+        End If
+    End Sub
+
+    Private Sub txtBookSearch_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtBookSearch.TextChanged
+
+        Dim Flag As Boolean = True
+        'Search Book Data Grid for imputed Title and Select it
+        If Flag = True Then
+            dgvBook.ClearSelection()
+            For Each row As DataGridViewRow In dgvBook.Rows
+                For Each cell As DataGridViewCell In row.Cells
+                    If Not IsNothing(cell.Value) Then
+                        If cell.Value.ToString.StartsWith(txtBookSearch.Text, StringComparison.InvariantCultureIgnoreCase) Then
+                            cell.Selected = True
+                            dgvBook.CurrentCell = dgvBook.SelectedCells(0)
+                            'Exit For
+                        End If
+                    End If
+                Next
+            Next
+        Else
+            If txtBookSearch.Text = "" Then
+                dgvBook.Rows(0).Selected = True
+            End If
+        End If
+
     End Sub
 End Class

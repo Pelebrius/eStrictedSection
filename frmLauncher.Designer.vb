@@ -29,15 +29,9 @@ Partial Class frmLauncher
         Me.txtStudentSearch = New System.Windows.Forms.TextBox()
         Me.btnBookSearch = New System.Windows.Forms.Button()
         Me.btnStudentSearch = New System.Windows.Forms.Button()
-        Me.lblBookResult = New System.Windows.Forms.Label()
-        Me.lblStudentResult = New System.Windows.Forms.Label()
         Me.btnBookTable = New System.Windows.Forms.Button()
         Me.btnStudentTable = New System.Windows.Forms.Button()
         Me.BookDataSet = New System.Data.DataSet()
-        Me.btnReadXml = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.btnReadXML2 = New System.Windows.Forms.Button()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.StudentDataSet = New System.Data.DataSet()
         Me.btnFullRedeam = New System.Windows.Forms.Button()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
@@ -58,8 +52,6 @@ Partial Class frmLauncher
         Me.dgvBook = New System.Windows.Forms.DataGridView()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RedeamDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,7 +65,7 @@ Partial Class frmLauncher
         '
         'txtBookSearch
         '
-        Me.txtBookSearch.Location = New System.Drawing.Point(716, 31)
+        Me.txtBookSearch.Location = New System.Drawing.Point(748, 36)
         Me.txtBookSearch.Name = "txtBookSearch"
         Me.txtBookSearch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtBookSearch.Size = New System.Drawing.Size(138, 20)
@@ -82,24 +74,28 @@ Partial Class frmLauncher
         'lblPromptBook
         '
         Me.lblPromptBook.AutoSize = True
-        Me.lblPromptBook.Location = New System.Drawing.Point(626, 34)
+        Me.lblPromptBook.BackColor = System.Drawing.Color.Transparent
+        Me.lblPromptBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPromptBook.Location = New System.Drawing.Point(621, 39)
         Me.lblPromptBook.Name = "lblPromptBook"
-        Me.lblPromptBook.Size = New System.Drawing.Size(85, 13)
+        Me.lblPromptBook.Size = New System.Drawing.Size(122, 16)
         Me.lblPromptBook.TabIndex = 1
         Me.lblPromptBook.Text = "Enter book Title:"
         '
         'lblPromptStudent
         '
         Me.lblPromptStudent.AutoSize = True
-        Me.lblPromptStudent.Location = New System.Drawing.Point(77, 34)
+        Me.lblPromptStudent.BackColor = System.Drawing.Color.Transparent
+        Me.lblPromptStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPromptStudent.Location = New System.Drawing.Point(68, 37)
         Me.lblPromptStudent.Name = "lblPromptStudent"
-        Me.lblPromptStudent.Size = New System.Drawing.Size(102, 13)
+        Me.lblPromptStudent.Size = New System.Drawing.Size(149, 32)
         Me.lblPromptStudent.TabIndex = 2
-        Me.lblPromptStudent.Text = "Enter student name:"
+        Me.lblPromptStudent.Text = "Enter Student Name:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(First or Last)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'txtStudentSearch
         '
-        Me.txtStudentSearch.Location = New System.Drawing.Point(185, 31)
+        Me.txtStudentSearch.Location = New System.Drawing.Point(218, 36)
         Me.txtStudentSearch.Name = "txtStudentSearch"
         Me.txtStudentSearch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtStudentSearch.Size = New System.Drawing.Size(121, 20)
@@ -107,41 +103,29 @@ Partial Class frmLauncher
         '
         'btnBookSearch
         '
-        Me.btnBookSearch.Location = New System.Drawing.Point(706, 98)
+        Me.btnBookSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBookSearch.Location = New System.Drawing.Point(694, 73)
         Me.btnBookSearch.Name = "btnBookSearch"
-        Me.btnBookSearch.Size = New System.Drawing.Size(96, 23)
+        Me.btnBookSearch.Size = New System.Drawing.Size(118, 23)
         Me.btnBookSearch.TabIndex = 4
         Me.btnBookSearch.Text = "Search Book"
         Me.btnBookSearch.UseVisualStyleBackColor = True
+        Me.btnBookSearch.Visible = False
         '
         'btnStudentSearch
         '
-        Me.btnStudentSearch.Location = New System.Drawing.Point(156, 98)
+        Me.btnStudentSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStudentSearch.Location = New System.Drawing.Point(144, 73)
         Me.btnStudentSearch.Name = "btnStudentSearch"
-        Me.btnStudentSearch.Size = New System.Drawing.Size(96, 23)
+        Me.btnStudentSearch.Size = New System.Drawing.Size(118, 23)
         Me.btnStudentSearch.TabIndex = 5
         Me.btnStudentSearch.Text = "Search Student"
         Me.btnStudentSearch.UseVisualStyleBackColor = True
-        '
-        'lblBookResult
-        '
-        Me.lblBookResult.Location = New System.Drawing.Point(626, 54)
-        Me.lblBookResult.Name = "lblBookResult"
-        Me.lblBookResult.Size = New System.Drawing.Size(260, 41)
-        Me.lblBookResult.TabIndex = 6
-        Me.lblBookResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblStudentResult
-        '
-        Me.lblStudentResult.Location = New System.Drawing.Point(77, 54)
-        Me.lblStudentResult.Name = "lblStudentResult"
-        Me.lblStudentResult.Size = New System.Drawing.Size(260, 41)
-        Me.lblStudentResult.TabIndex = 7
-        Me.lblStudentResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnStudentSearch.Visible = False
         '
         'btnBookTable
         '
-        Me.btnBookTable.Location = New System.Drawing.Point(486, 32)
+        Me.btnBookTable.Location = New System.Drawing.Point(487, 34)
         Me.btnBookTable.Name = "btnBookTable"
         Me.btnBookTable.Size = New System.Drawing.Size(84, 23)
         Me.btnBookTable.TabIndex = 8
@@ -161,43 +145,6 @@ Partial Class frmLauncher
         '
         Me.BookDataSet.DataSetName = "BookDataSet"
         '
-        'btnReadXml
-        '
-        Me.btnReadXml.Location = New System.Drawing.Point(657, 331)
-        Me.btnReadXml.Name = "btnReadXml"
-        Me.btnReadXml.Size = New System.Drawing.Size(107, 23)
-        Me.btnReadXml.TabIndex = 11
-        Me.btnReadXml.Text = "Refresh Book List"
-        Me.btnReadXml.UseVisualStyleBackColor = True
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(571, 134)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(356, 191)
-        Me.DataGridView1.TabIndex = 10
-        '
-        'btnReadXML2
-        '
-        Me.btnReadXML2.Location = New System.Drawing.Point(200, 331)
-        Me.btnReadXML2.Name = "btnReadXML2"
-        Me.btnReadXML2.Size = New System.Drawing.Size(111, 23)
-        Me.btnReadXML2.TabIndex = 14
-        Me.btnReadXML2.Text = "Refresh Student List"
-        Me.btnReadXML2.UseVisualStyleBackColor = True
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(30, 134)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.Size = New System.Drawing.Size(367, 191)
-        Me.DataGridView2.TabIndex = 13
-        Me.DataGridView2.Visible = False
-        '
         'StudentDataSet
         '
         Me.StudentDataSet.DataSetName = "StudentDataSet"
@@ -205,7 +152,7 @@ Partial Class frmLauncher
         'btnFullRedeam
         '
         Me.btnFullRedeam.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFullRedeam.Location = New System.Drawing.Point(445, 160)
+        Me.btnFullRedeam.Location = New System.Drawing.Point(445, 171)
         Me.btnFullRedeam.Name = "btnFullRedeam"
         Me.btnFullRedeam.Size = New System.Drawing.Size(75, 23)
         Me.btnFullRedeam.TabIndex = 16
@@ -215,9 +162,9 @@ Partial Class frmLauncher
         'DataGridView3
         '
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(156, 359)
+        Me.DataGridView3.Location = New System.Drawing.Point(156, 346)
         Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(662, 229)
+        Me.DataGridView3.Size = New System.Drawing.Size(662, 240)
         Me.DataGridView3.TabIndex = 17
         '
         'RedeamDataSet
@@ -227,7 +174,7 @@ Partial Class frmLauncher
         'btnSave
         '
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(445, 198)
+        Me.btnSave.Location = New System.Drawing.Point(445, 173)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 18
@@ -237,7 +184,7 @@ Partial Class frmLauncher
         'btnDelete
         '
         Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.Location = New System.Drawing.Point(445, 236)
+        Me.btnDelete.Location = New System.Drawing.Point(445, 211)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 19
@@ -247,7 +194,7 @@ Partial Class frmLauncher
         'btnReport
         '
         Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.Location = New System.Drawing.Point(425, 276)
+        Me.btnReport.Location = New System.Drawing.Point(425, 251)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(117, 23)
         Me.btnReport.TabIndex = 20
@@ -287,7 +234,8 @@ Partial Class frmLauncher
         '
         'btnAddStudent
         '
-        Me.btnAddStudent.Location = New System.Drawing.Point(71, 331)
+        Me.btnAddStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddStudent.Location = New System.Drawing.Point(144, 306)
         Me.btnAddStudent.Name = "btnAddStudent"
         Me.btnAddStudent.Size = New System.Drawing.Size(108, 23)
         Me.btnAddStudent.TabIndex = 22
@@ -296,7 +244,8 @@ Partial Class frmLauncher
         '
         'btnAddBook
         '
-        Me.btnAddBook.Location = New System.Drawing.Point(778, 331)
+        Me.btnAddBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddBook.Location = New System.Drawing.Point(706, 306)
         Me.btnAddBook.Name = "btnAddBook"
         Me.btnAddBook.Size = New System.Drawing.Size(108, 23)
         Me.btnAddBook.TabIndex = 23
@@ -306,7 +255,7 @@ Partial Class frmLauncher
         'dgvStudent
         '
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvStudent.Location = New System.Drawing.Point(30, 127)
+        Me.dgvStudent.Location = New System.Drawing.Point(30, 102)
         Me.dgvStudent.Name = "dgvStudent"
         Me.dgvStudent.Size = New System.Drawing.Size(367, 198)
         Me.dgvStudent.TabIndex = 24
@@ -314,7 +263,7 @@ Partial Class frmLauncher
         'btnRedeamAfterStudent
         '
         Me.btnRedeamAfterStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRedeamAfterStudent.Location = New System.Drawing.Point(445, 162)
+        Me.btnRedeamAfterStudent.Location = New System.Drawing.Point(445, 137)
         Me.btnRedeamAfterStudent.Name = "btnRedeamAfterStudent"
         Me.btnRedeamAfterStudent.Size = New System.Drawing.Size(75, 23)
         Me.btnRedeamAfterStudent.TabIndex = 25
@@ -324,10 +273,10 @@ Partial Class frmLauncher
         'dgvBook
         '
         Me.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBook.Location = New System.Drawing.Point(571, 134)
+        Me.dgvBook.Location = New System.Drawing.Point(571, 102)
         Me.dgvBook.Name = "dgvBook"
         Me.dgvBook.ReadOnly = True
-        Me.dgvBook.Size = New System.Drawing.Size(356, 191)
+        Me.dgvBook.Size = New System.Drawing.Size(356, 198)
         Me.dgvBook.TabIndex = 26
         '
         'PictureBox2
@@ -360,14 +309,8 @@ Partial Class frmLauncher
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.DataGridView3)
         Me.Controls.Add(Me.btnFullRedeam)
-        Me.Controls.Add(Me.btnReadXML2)
-        Me.Controls.Add(Me.DataGridView2)
-        Me.Controls.Add(Me.btnReadXml)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btnStudentTable)
         Me.Controls.Add(Me.btnBookTable)
-        Me.Controls.Add(Me.lblStudentResult)
-        Me.Controls.Add(Me.lblBookResult)
         Me.Controls.Add(Me.btnStudentSearch)
         Me.Controls.Add(Me.btnBookSearch)
         Me.Controls.Add(Me.txtStudentSearch)
@@ -379,8 +322,6 @@ Partial Class frmLauncher
         Me.Name = "frmLauncher"
         Me.Text = "E-stricted Section"
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RedeamDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -401,15 +342,9 @@ Partial Class frmLauncher
     Friend WithEvents txtStudentSearch As System.Windows.Forms.TextBox
     Friend WithEvents btnBookSearch As System.Windows.Forms.Button
     Friend WithEvents btnStudentSearch As System.Windows.Forms.Button
-    Friend WithEvents lblBookResult As System.Windows.Forms.Label
-    Friend WithEvents lblStudentResult As System.Windows.Forms.Label
     Friend WithEvents btnBookTable As System.Windows.Forms.Button
     Friend WithEvents btnStudentTable As System.Windows.Forms.Button
     Friend WithEvents BookDataSet As System.Data.DataSet
-    Friend WithEvents btnReadXml As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents btnReadXML2 As System.Windows.Forms.Button
-    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
     Friend WithEvents StudentDataSet As System.Data.DataSet
     Friend WithEvents btnFullRedeam As System.Windows.Forms.Button
     Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
