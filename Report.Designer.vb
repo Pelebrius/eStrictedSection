@@ -23,7 +23,6 @@ Partial Class Report
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Report))
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.txtReport = New System.Windows.Forms.TextBox()
         Me.lblReportTitle = New System.Windows.Forms.Label()
         Me.txtDate = New System.Windows.Forms.TextBox()
@@ -42,13 +41,6 @@ Partial Class Report
         Me.MenuStrip.SuspendLayout()
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ReportViewer1
-        '
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 18)
-        Me.ReportViewer1.Name = "ReportViewer"
-        Me.ReportViewer1.Size = New System.Drawing.Size(396, 246)
-        Me.ReportViewer1.TabIndex = 0
         '
         'txtReport
         '
@@ -223,7 +215,6 @@ Partial Class Report
         Me.PerformLayout()
 
     End Sub
-    Private WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents txtReport As System.Windows.Forms.TextBox
     Friend WithEvents lblReportTitle As System.Windows.Forms.Label
     Friend WithEvents txtDate As System.Windows.Forms.TextBox

@@ -16,3 +16,6 @@ G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming
 G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.Report.resources
 G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.frmStudentAddition.resources
 G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\WindowsApplication1.frmAddBook.resources
+F:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\FBLA 2018 Coding and Programming.exe
+F:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\FBLA 2018 Coding and Programming.xml
+F:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\obj\x86\Debug\FBLA 2018 Coding and Programming.pdb
