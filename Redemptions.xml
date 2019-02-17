@@ -164,4 +164,20 @@
     <StudentID>6</StudentID>
     <StudentName>Seamus Finnigan</StudentName>
   </Redemptions>
+  <Redemptions>
+    <RedemptionDate>17/February/2019</RedemptionDate>
+    <RedemptionID>20190217142132615</RedemptionID>
+    <BookID>4</BookID>
+    <BookTitle>Captivating Cartography</BookTitle>
+    <StudentID>11</StudentID>
+    <StudentName>Richard Pendragon</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>17/February/2019</RedemptionDate>
+    <RedemptionID>20190217142410571</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>12</StudentID>
+    <StudentName>Roger Salazar</StudentName>
+  </Redemptions>
 </NewDataSet>

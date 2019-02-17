@@ -20,7 +20,8 @@
         End With
 
         'Load and Read Book XML
-        bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book - Copy.xml")
+        'bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml")
+        bookdt.ReadXml("Book.xml")
         dgvBook.DataSource = bookdt
 
         'Generate Book ID
@@ -70,7 +71,8 @@
         'Save Books to XML
         bookdt = CType(dgvBook.DataSource, DataTable)
         bookdt.AcceptChanges()
-        bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book - Copy.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        'bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        bookdt.WriteXml("book.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
         With frmLauncher.dgvBook
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect

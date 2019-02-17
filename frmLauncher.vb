@@ -14,7 +14,8 @@ Public Class frmLauncher
     Private Sub btnBookSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookSearch.Click
         'Search Book Titles
         Dim xmlFile As XmlReader
-        xmlFile = XmlReader.Create("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\BookTest.xml", New XmlReaderSettings())
+        'xmlFile = XmlReader.Create("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml", New XmlReaderSettings())
+        xmlFile = XmlReader.Create("Book.xml", New XmlReaderSettings())
         Dim ds As New DataSet
         Dim dv As DataView
         ds.ReadXml(xmlFile)
@@ -47,8 +48,10 @@ Public Class frmLauncher
     Private Sub btnStudentSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnStudentSearch.Click
         'Search Student First Names
         Dim xmlFile As XmlReader
-        Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\studentTest.xml"
-        xmlFile = XmlReader.Create("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\studentTest.xml", New XmlReaderSettings())
+        'Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
+        Dim filePath As String = "student.xml"
+        'xmlFile = XmlReader.Create("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", New XmlReaderSettings())
+        xmlFile = XmlReader.Create("student.xml", New XmlReaderSettings())
         Dim ds As New DataSet
         Dim dv As DataView
         ds.ReadXml(xmlFile)
@@ -77,16 +80,21 @@ Public Class frmLauncher
 
     Private Sub frmLauncher_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         'Prompt user to make sure all saved changes are in fact saved
-        If MessageBox.Show("Are you sure you want to leave the E-Stricted Section? All unsaved redemptions will be lost.", "Leaving the Restricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to leave the E-Stricted Section? All unsaved redemptions will be lost.", "Leaving the E-stricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
         Else
             e.Cancel = True
         End If
     End Sub
     Private Sub frmLauncher_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
+        'Dim driveLetter As String
+
+        'driveLetter = InputBox("Enter the Letter of the Drive in which this program is from", "Drive Letter")
+
 
             'Read Book Table XML
-        Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book - Copy.xml"
+        'Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml"
+        Dim filePath As String = "Book.xml"
             BookDataSet.ReadXml(filePath)
 
             DataGridView1.DataSource = BookDataSet
@@ -112,7 +120,7 @@ Public Class frmLauncher
 
             'Read Student Table XML
             'Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
-            Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml"
+        Dim filePath1 As String = "student.xml"
             StudentDataSet.ReadXml(filePath1)
 
             DataGridView2.DataSource = StudentDataSet
@@ -148,15 +156,18 @@ Public Class frmLauncher
             dt.Columns.Add("StudentName", GetType(String))
 
         'Load and Read Redemption XML
-        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
+        'dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
+        dt.ReadXml("Redemptions.xml")
         DataGridView3.DataSource = dt
 
         'Load and Read Student XML
-        studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
+        'studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml")
+        studentdt.ReadXml("student.xml")
         dgvStudent.DataSource = studentdt
 
         'Load and Read Book XML
-        bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book - Copy.xml")
+        'bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml")
+        bookdt.ReadXml("Book.xml")
         dgvBook.DataSource = bookdt
 
         'Redemption Table (Select only One row)
@@ -197,7 +208,8 @@ Public Class frmLauncher
         'Save Redemption to XML
         dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
-        dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        'dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        dt.WriteXml("Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
     End Sub
 
@@ -231,7 +243,8 @@ Public Class frmLauncher
         'Save Redemption to XML
         dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
-        dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        'dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        dt.WriteXml("Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
     End Sub
 
@@ -322,12 +335,14 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
         'Refresh Student Table
         'Load and Read Student XML
-        studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
+        'studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml")
+        studentdt.ReadXml("student.xml")
         dgvStudent.DataSource = studentdt
 
         'Refresh Book Table
         'Load and Read Book XML
-        bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book - Copy.xml")
+        'bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml")
+        bookdt.ReadXml("book.xml")
         dgvBook.DataSource = bookdt
 
     End Sub

@@ -21,7 +21,8 @@ Public Class frmStudentAddition
         End With
 
         'Load and Read Student XML
-        studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml")
+        'studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml")
+        studentdt.ReadXml("student.xml")
         dgvStudent.DataSource = studentdt
 
         'Generate Student ID
@@ -96,7 +97,8 @@ Public Class frmStudentAddition
         'Save Students to XML
         studentdt = CType(dgvStudent.DataSource, DataTable)
         studentdt.AcceptChanges()
-        studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student - Copy.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        studentdt.WriteXml("student.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
         With frmLauncher.dgvStudent
             .SelectionMode = DataGridViewSelectionMode.FullRowSelect

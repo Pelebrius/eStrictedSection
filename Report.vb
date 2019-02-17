@@ -24,7 +24,8 @@
         dt.Columns.Add("StudentID", GetType(String))
         dt.Columns.Add("StudentName", GetType(String))
 
-        dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
+        'dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
+        dt.ReadXml("Redemptions.xml")
 
         dgvReport.DataSource = dt
 
