@@ -276,14 +276,14 @@ Partial Class frmStudentAddition
         Me.lblCurrentStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCurrentStudents.Location = New System.Drawing.Point(9, 223)
         Me.lblCurrentStudents.Name = "lblCurrentStudents"
-        Me.lblCurrentStudents.Size = New System.Drawing.Size(125, 16)
+        Me.lblCurrentStudents.Size = New System.Drawing.Size(121, 16)
         Me.lblCurrentStudents.TabIndex = 15
-        Me.lblCurrentStudents.Text = "Current Students:"
+        Me.lblCurrentStudents.Text = "Current Students"
         '
         'btnAddStudent
         '
         Me.btnAddStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddStudent.Location = New System.Drawing.Point(356, 193)
+        Me.btnAddStudent.Location = New System.Drawing.Point(355, 193)
         Me.btnAddStudent.Name = "btnAddStudent"
         Me.btnAddStudent.Size = New System.Drawing.Size(97, 23)
         Me.btnAddStudent.TabIndex = 16
@@ -311,6 +311,7 @@ Partial Class frmStudentAddition
         '
         'MenuToolStripMenuItem
         '
+        Me.MenuToolStripMenuItem.BackColor = System.Drawing.Color.Tan
         Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem})
         Me.MenuToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
@@ -320,7 +321,7 @@ Partial Class frmStudentAddition
         'HomeToolStripMenuItem
         '
         Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
-        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.HomeToolStripMenuItem.Text = "Home"
         '
         'txtPass

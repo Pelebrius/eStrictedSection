@@ -3,7 +3,7 @@
     Public bookdt As New DataTable("Book")
     Private Sub frmAddBook_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Create columns for Book Table
-        bookdt.Columns.Add("BookId", GetType(Integer))
+        bookdt.Columns.Add("BookID", GetType(Integer))
         bookdt.Columns.Add("Title", GetType(String))
         bookdt.Columns.Add("Author", GetType(String))
         bookdt.Columns.Add("Subject", GetType(String))

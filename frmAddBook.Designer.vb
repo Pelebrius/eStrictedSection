@@ -130,11 +130,11 @@ Partial Class frmAddBook
         Me.lblCurrentBooks.AutoSize = True
         Me.lblCurrentBooks.BackColor = System.Drawing.Color.Transparent
         Me.lblCurrentBooks.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCurrentBooks.Location = New System.Drawing.Point(12, 136)
+        Me.lblCurrentBooks.Location = New System.Drawing.Point(12, 137)
         Me.lblCurrentBooks.Name = "lblCurrentBooks"
-        Me.lblCurrentBooks.Size = New System.Drawing.Size(109, 16)
+        Me.lblCurrentBooks.Size = New System.Drawing.Size(105, 16)
         Me.lblCurrentBooks.TabIndex = 9
-        Me.lblCurrentBooks.Text = "Current Books:"
+        Me.lblCurrentBooks.Text = "Current Books"
         '
         'btnAddBook
         '

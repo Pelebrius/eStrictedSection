@@ -7,7 +7,7 @@
           <xs:element name="Book">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="BookId" type="xs:int" minOccurs="0" />
+                <xs:element name="BookID" type="xs:int" minOccurs="0" />
                 <xs:element name="Title" type="xs:string" minOccurs="0" />
                 <xs:element name="Author" type="xs:string" minOccurs="0" />
                 <xs:element name="Subject" type="xs:string" minOccurs="0" />
@@ -19,55 +19,55 @@
     </xs:element>
   </xs:schema>
   <Book>
-    <BookId>1</BookId>
+    <BookID>1</BookID>
     <Title>A Magical Me</Title>
     <Author>Gilderoy Lockheart</Author>
     <Subject>Biography</Subject>
   </Book>
   <Book>
-    <BookId>2</BookId>
+    <BookID>2</BookID>
     <Title>Prolific Potions</Title>
     <Author>Snape</Author>
     <Subject>Fantasy</Subject>
   </Book>
   <Book>
-    <BookId>3</BookId>
+    <BookID>3</BookID>
     <Title>Guide to Flying</Title>
     <Author>Hooch</Author>
     <Subject>Fantasy</Subject>
   </Book>
   <Book>
-    <BookId>4</BookId>
+    <BookID>4</BookID>
     <Title>Captivating Cartography</Title>
     <Author>Flourish</Author>
     <Subject>Fantasy</Subject>
   </Book>
   <Book>
-    <BookId>5</BookId>
+    <BookID>5</BookID>
     <Title>Enchanting Charms</Title>
     <Author>Flitwick</Author>
     <Subject>Fantasy</Subject>
   </Book>
   <Book>
-    <BookId>6</BookId>
+    <BookID>6</BookID>
     <Title>Simple Sorcery</Title>
     <Author>Gilderoy Lockheart</Author>
     <Subject>Fantasy</Subject>
   </Book>
   <Book>
-    <BookId>7</BookId>
+    <BookID>7</BookID>
     <Title>Mind of the Ministry</Title>
     <Author>Cornelius Fudge</Author>
     <Subject>Nonfiction</Subject>
   </Book>
   <Book>
-    <BookId>8</BookId>
+    <BookID>8</BookID>
     <Title>Fantastic Beasts and Where to Find Them</Title>
     <Author>Newt Scamander</Author>
     <Subject>Nonfiction</Subject>
   </Book>
   <Book>
-    <BookId>9</BookId>
+    <BookID>9</BookID>
     <Title>Myths and Monsters</Title>
     <Author>Rascal Boopkins</Author>
     <Subject>Fiction</Subject>

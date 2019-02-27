@@ -11,59 +11,11 @@ Public Class frmLauncher
     Public bookdt As New DataTable("Book")
     Const FLAG As Integer = 1
    
-    Private Sub btnBookSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookSearch.Click
-
-        'Dim Flag As Boolean = True
-
-        'If Flag = True Then
-        '    dgvBook.ClearSelection()
-        '    For Each row As DataGridViewRow In dgvBook.Rows
-        '        For Each cell As DataGridViewCell In row.Cells
-        '            If Not IsNothing(cell.Value) Then
-        '                If cell.Value.ToString.StartsWith(txtBookSearch.Text, StringComparison.InvariantCultureIgnoreCase) Then
-        '                    cell.Selected = True
-        '                    dgvBook.CurrentCell = dgvBook.SelectedCells(0)
-        '                    'Exit For
-        '                End If
-        '            End If
-        '        Next
-        '    Next
-        'Else
-        '    If txtBookSearch.Text = "" Then
-        '        dgvBook.Rows(0).Selected = True
-        '    End If
-        'End If
-
-    End Sub
-
-    Private Sub btnStudentSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnStudentSearch.Click
-
-        'Dim Flag As Boolean = True
-
-        'If Flag = True Then
-        '    dgvStudent.ClearSelection()
-        '    For Each row As DataGridViewRow In dgvStudent.Rows
-        '        For Each cell As DataGridViewCell In row.Cells
-        '            If Not IsNothing(cell.Value) Then
-        '                If cell.Value.ToString.StartsWith(txtStudentSearch.Text, StringComparison.InvariantCultureIgnoreCase) Then
-        '                    cell.Selected = True
-        '                    dgvStudent.CurrentCell = dgvStudent.SelectedCells(0)
-        '                    'Exit For
-        '                End If
-        '            End If
-        '        Next
-        '    Next
-        'Else
-        '    If txtStudentSearch.Text = "" Then
-        '        dgvStudent.Rows(0).Selected = True
-        '    End If
-        'End If
-    End Sub
-    Private Sub btnBookTable_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnBookTable.Click
+    Private Sub btnBookTable_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         BookTable.Show()
     End Sub
 
-    Private Sub btnStudentTable_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnStudentTable.Click
+    Private Sub btnStudentTable_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         StudentTable.Show()
     End Sub
 
@@ -95,7 +47,7 @@ Public Class frmLauncher
         End With
 
         'Create columns for Book Table
-        bookdt.Columns.Add("BookId", GetType(String))
+        bookdt.Columns.Add("BookID", GetType(String))
         bookdt.Columns.Add("Title", GetType(String))
         bookdt.Columns.Add("Author", GetType(String))
         bookdt.Columns.Add("Subject", GetType(String))
@@ -200,6 +152,18 @@ Public Class frmLauncher
         'dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
         dt.WriteXml("Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
+        'Save Students to XML
+        studentdt = CType(dgvStudent.DataSource, DataTable)
+        studentdt.AcceptChanges()
+        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        studentdt.WriteXml("student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+        'Save Books to XML
+        bookdt = CType(dgvBook.DataSource, DataTable)
+        bookdt.AcceptChanges()
+        'bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        bookdt.WriteXml("book.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
@@ -231,12 +195,24 @@ Public Class frmLauncher
         End If
     End Sub
 
-    Private Sub SaveToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles SaveToolStripMenuItem.Click
+    Private Sub SaveToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
         'Save Redemption to XML
         dt = CType(DataGridView3.DataSource, DataTable)
         dt.AcceptChanges()
         'dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
         dt.WriteXml("Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+        'Save Students to XML
+        studentdt = CType(dgvStudent.DataSource, DataTable)
+        studentdt.AcceptChanges()
+        'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        studentdt.WriteXml("student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+        'Save Books to XML
+        bookdt = CType(dgvBook.DataSource, DataTable)
+        bookdt.AcceptChanges()
+        'bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        bookdt.WriteXml("book.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
     End Sub
 
@@ -305,7 +281,7 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
             Next i
             sb.Append("Total: " + selectedRowCount1.ToString())
             bookTitle = CStr(dgvBook("Title", selectedRowIndex1).Value)
-            bookID = CStr(dgvBook("BookId", selectedRowIndex1).Value)
+            bookID = CStr(dgvBook("BookID", selectedRowIndex1).Value)
         End If
 
         bookTitle = CStr(dgvBook("Title", selectedRowIndex1).Value)
@@ -407,4 +383,5 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
         End If
 
     End Sub
+
 End Class

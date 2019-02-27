@@ -22,61 +22,74 @@ Partial Class StudentTable
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnReadXml = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.StudentDataSet = New System.Data.DataSet()
-        Me.btnRedeamStudent = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HomeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnReadXml
-        '
-        Me.btnReadXml.Location = New System.Drawing.Point(39, 199)
-        Me.btnReadXml.Name = "btnReadXml"
-        Me.btnReadXml.Size = New System.Drawing.Size(75, 23)
-        Me.btnReadXml.TabIndex = 8
-        Me.btnReadXml.Text = "Read XML"
-        Me.btnReadXml.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(13, 43)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(310, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(669, 216)
         Me.DataGridView1.TabIndex = 7
         '
         'StudentDataSet
         '
         Me.StudentDataSet.DataSetName = "StudentDataSet"
         '
-        'btnRedeamStudent
+        'MenuStrip1
         '
-        Me.btnRedeamStudent.Location = New System.Drawing.Point(200, 199)
-        Me.btnRedeamStudent.Name = "btnRedeamStudent"
-        Me.btnRedeamStudent.Size = New System.Drawing.Size(102, 23)
-        Me.btnRedeamStudent.TabIndex = 9
-        Me.btnRedeamStudent.Text = "Redeam Student"
-        Me.btnRedeamStudent.UseVisualStyleBackColor = True
+        Me.MenuStrip1.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.AddStudentImage_FourHouses
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(697, 25)
+        Me.MenuStrip1.TabIndex = 8
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'MenuToolStripMenuItem
+        '
+        Me.MenuToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeToolStripMenuItem})
+        Me.MenuToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(55, 21)
+        Me.MenuToolStripMenuItem.Text = "Menu"
+        '
+        'HomeToolStripMenuItem
+        '
+        Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
+        Me.HomeToolStripMenuItem.Text = "Home"
         '
         'StudentTable
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(335, 261)
-        Me.Controls.Add(Me.btnRedeamStudent)
-        Me.Controls.Add(Me.btnReadXml)
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.BackgroundImage_Parchment
+        Me.ClientSize = New System.Drawing.Size(697, 271)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "StudentTable"
         Me.Text = "Student Table"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnReadXml As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents StudentDataSet As System.Data.DataSet
-    Friend WithEvents btnRedeamStudent As System.Windows.Forms.Button
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents MenuToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HomeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
