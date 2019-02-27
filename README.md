@@ -2,7 +2,7 @@
 This application is called the E-Stricted Section. Its purpose is to redeam e-books under a student's name and track the redemption as it is made within the program.
 
 ## Installation Instructions
-* Click the link to go to the download page for the zip file: [eStrictedSection.zip](https://github.com/Pelebrius/eStrictedSection/blob/master/bin/Debug/eStrictedSection.zip)
+* Click the link to go to the download page for the zip file: [eStrictedSection.zip](https://github.com/Pelebrius/eStrictedSection-install/blob/master/eStrictedSection.zip)
 * Once on the eStrictedSection page, click the [Download] button.
 * Download should appear at the bottom of the browser window
 * Open your Download folder in File Explorer
