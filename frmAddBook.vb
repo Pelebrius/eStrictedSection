@@ -66,6 +66,8 @@
             'bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml", System.Data.XmlWriteMode.WriteSchema, False)
             bookdt.WriteXml("book.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
+            Call ClearTable(frmLauncher.bookdt)
+
             frmLauncher.bookdt.ReadXml("book.xml")
 
             'Clear display for new student information input
@@ -102,5 +104,14 @@
     Private Sub frmAddBook_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
         'Sort Table by most recent book
         Me.dgvBook.Sort(Me.dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+    End Sub
+    Sub ClearTable(ByVal table As DataTable)
+        Try
+            table.Clear()
+        Catch e As DataException
+            ' Process exception and return.
+            Console.WriteLine("Exception of type {0} occurred.", _
+              e.GetType().ToString())
+        End Try
     End Sub
 End Class

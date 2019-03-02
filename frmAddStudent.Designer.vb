@@ -54,6 +54,7 @@ Partial Class frmStudentAddition
         Me.cmbSchool = New System.Windows.Forms.ComboBox()
         Me.btnReturnToHome = New System.Windows.Forms.Button()
         Me.lblStudentAddition = New System.Windows.Forms.Label()
+        Me.lblNoEdit = New System.Windows.Forms.Label()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpGrade.SuspendLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -297,6 +298,7 @@ Partial Class frmStudentAddition
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvStudent.Location = New System.Drawing.Point(12, 269)
         Me.dgvStudent.Name = "dgvStudent"
+        Me.dgvStudent.ReadOnly = True
         Me.dgvStudent.Size = New System.Drawing.Size(461, 168)
         Me.dgvStudent.TabIndex = 17
         '
@@ -357,9 +359,9 @@ Partial Class frmStudentAddition
         'btnReturnToHome
         '
         Me.btnReturnToHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReturnToHome.Location = New System.Drawing.Point(355, 32)
+        Me.btnReturnToHome.Location = New System.Drawing.Point(197, 30)
         Me.btnReturnToHome.Name = "btnReturnToHome"
-        Me.btnReturnToHome.Size = New System.Drawing.Size(118, 44)
+        Me.btnReturnToHome.Size = New System.Drawing.Size(177, 26)
         Me.btnReturnToHome.TabIndex = 30
         Me.btnReturnToHome.Text = "Return to Home Page"
         Me.btnReturnToHome.UseVisualStyleBackColor = True
@@ -375,12 +377,24 @@ Partial Class frmStudentAddition
         Me.lblStudentAddition.TabIndex = 31
         Me.lblStudentAddition.Text = "Student Addition"
         '
+        'lblNoEdit
+        '
+        Me.lblNoEdit.AutoSize = True
+        Me.lblNoEdit.BackColor = System.Drawing.Color.Transparent
+        Me.lblNoEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNoEdit.Location = New System.Drawing.Point(12, 440)
+        Me.lblNoEdit.Name = "lblNoEdit"
+        Me.lblNoEdit.Size = New System.Drawing.Size(353, 15)
+        Me.lblNoEdit.TabIndex = 36
+        Me.lblNoEdit.Text = "*Student information can be edited on the Home Page"
+        '
         'frmStudentAddition
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(484, 476)
+        Me.ClientSize = New System.Drawing.Size(484, 458)
+        Me.Controls.Add(Me.lblNoEdit)
         Me.Controls.Add(Me.lblStudentAddition)
         Me.Controls.Add(Me.btnReturnToHome)
         Me.Controls.Add(Me.cmbSchool)
@@ -448,4 +462,5 @@ Partial Class frmStudentAddition
     Friend WithEvents cmbSchool As System.Windows.Forms.ComboBox
     Friend WithEvents btnReturnToHome As System.Windows.Forms.Button
     Friend WithEvents lblStudentAddition As System.Windows.Forms.Label
+    Friend WithEvents lblNoEdit As System.Windows.Forms.Label
 End Class

@@ -7,7 +7,7 @@
           <xs:element name="Student">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="Student_x0020_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="Student_x0020_ID" type="xs:int" minOccurs="0" />
                 <xs:element name="First_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="Last_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="School" type="xs:string" minOccurs="0" />
@@ -211,5 +211,21 @@
     <School>Ilvermorny</School>
     <Grade>5</Grade>
     <E-Mail>Twillow@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>25</Student_x0020_ID>
+    <First_x0020_Name>Lilo</First_x0020_Name>
+    <Last_x0020_Name>Gibbles</Last_x0020_Name>
+    <School>Castelobruxo</School>
+    <Grade>5</Grade>
+    <E-Mail>Lgibbles@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>26</Student_x0020_ID>
+    <First_x0020_Name>Sammantha</First_x0020_Name>
+    <Last_x0020_Name>Linderwald</Last_x0020_Name>
+    <School>Beauxbatons</School>
+    <Grade>3</Grade>
+    <E-Mail>Slinderwald@wiz.com</E-Mail>
   </Student>
 </NewDataSet>

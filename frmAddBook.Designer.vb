@@ -40,6 +40,7 @@ Partial Class frmAddBook
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btnReturnToHome = New System.Windows.Forms.Button()
         Me.lblBookAddition = New System.Windows.Forms.Label()
+        Me.lblNoEdit = New System.Windows.Forms.Label()
         CType(Me.dgvBook, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,6 +125,7 @@ Partial Class frmAddBook
         Me.dgvBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBook.Location = New System.Drawing.Point(12, 201)
         Me.dgvBook.Name = "dgvBook"
+        Me.dgvBook.ReadOnly = True
         Me.dgvBook.Size = New System.Drawing.Size(463, 150)
         Me.dgvBook.TabIndex = 8
         '
@@ -201,7 +203,7 @@ Partial Class frmAddBook
         Me.btnReturnToHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnReturnToHome.Location = New System.Drawing.Point(204, 35)
         Me.btnReturnToHome.Name = "btnReturnToHome"
-        Me.btnReturnToHome.Size = New System.Drawing.Size(170, 23)
+        Me.btnReturnToHome.Size = New System.Drawing.Size(170, 27)
         Me.btnReturnToHome.TabIndex = 33
         Me.btnReturnToHome.Text = "Return to Home Page"
         Me.btnReturnToHome.UseVisualStyleBackColor = True
@@ -217,12 +219,24 @@ Partial Class frmAddBook
         Me.lblBookAddition.TabIndex = 34
         Me.lblBookAddition.Text = "Book Addition"
         '
+        'lblNoEdit
+        '
+        Me.lblNoEdit.AutoSize = True
+        Me.lblNoEdit.BackColor = System.Drawing.Color.Transparent
+        Me.lblNoEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNoEdit.Location = New System.Drawing.Point(12, 354)
+        Me.lblNoEdit.Name = "lblNoEdit"
+        Me.lblNoEdit.Size = New System.Drawing.Size(336, 15)
+        Me.lblNoEdit.TabIndex = 35
+        Me.lblNoEdit.Text = "*Book information can be edited on the Home Page"
+        '
         'frmAddBook
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.BackgroundImage_Parchment
-        Me.ClientSize = New System.Drawing.Size(486, 366)
+        Me.ClientSize = New System.Drawing.Size(486, 374)
+        Me.Controls.Add(Me.lblNoEdit)
         Me.Controls.Add(Me.lblBookAddition)
         Me.Controls.Add(Me.btnReturnToHome)
         Me.Controls.Add(Me.PictureBox2)
@@ -270,4 +284,5 @@ Partial Class frmAddBook
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents btnReturnToHome As System.Windows.Forms.Button
     Friend WithEvents lblBookAddition As System.Windows.Forms.Label
+    Friend WithEvents lblNoEdit As System.Windows.Forms.Label
 End Class

@@ -67,6 +67,8 @@ Public Class frmStudentAddition
             'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", System.Data.XmlWriteMode.WriteSchema, False)
             studentdt.WriteXml("student.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
+            Call ClearTable(frmLauncher.studentdt)
+
             frmLauncher.studentdt.ReadXml("student.xml")
 
             'Clear display for new student information input
@@ -143,5 +145,14 @@ Public Class frmStudentAddition
     Private Sub frmStudentAddition_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
         'Sort Table by most recent student
         Me.dgvStudent.Sort(Me.dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+    End Sub
+    Sub ClearTable(ByVal table As DataTable)
+        Try
+            table.Clear()
+        Catch e As DataException
+            ' Process exception and return.
+            Console.WriteLine("Exception of type {0} occurred.", _
+              e.GetType().ToString())
+        End Try
     End Sub
 End Class
