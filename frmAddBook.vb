@@ -35,10 +35,12 @@
         txtBookID.Text = bookId
 
         'Sort Table by most recent book
-        dgvBook.Sort(dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+        Me.dgvBook.Sort(Me.dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
     End Sub
 
     Private Sub btnAddBook_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddBook.Click
+
+
 
         If txtBookTitle.Text = Nothing Or txtAuthor.Text = Nothing Or txtBookSubject.Text = Nothing Then
             ' Display a MsgBox asking the user to save changes or abort.
@@ -48,15 +50,23 @@
             row = (New String() {txtBookID.Text, txtBookTitle.Text, txtAuthor.Text, txtBookSubject.Text})
             bookdt.Rows.Add(row)
 
-            dgvBook.DataSource = bookdt
+            Me.dgvBook.DataSource = bookdt
 
             'Sort Table by most recent book
-            dgvBook.Sort(dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+            Me.dgvBook.Sort(Me.dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
 
             'Select most recent book
             Me.dgvBook.Rows(0).Selected = True
 
-            MessageBox.Show("Book Successfully Added.", "Success")
+            'Update table on main page
+
+            'Save Books to XML
+            bookdt = CType(dgvBook.DataSource, DataTable)
+            bookdt.AcceptChanges()
+            'bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml", System.Data.XmlWriteMode.WriteSchema, False)
+            bookdt.WriteXml("book.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+            frmLauncher.bookdt.ReadXml("book.xml")
 
             'Clear display for new student information input
             Me.txtBookID.Text = Nothing
@@ -65,12 +75,17 @@
             Me.txtBookID.Text = bookId
             Me.txtAuthor.Text = Nothing
             Me.txtBookSubject.Text = Nothing
-            End If
 
+            'Display to user a successful addition
+            MessageBox.Show("Book Successfully Added.", "Success")
+        End If
 
     End Sub
 
-    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
+    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing, btnReturnToHome.Click
+
+        Me.Hide()
+
         'Save Books to XML
         bookdt = CType(dgvBook.DataSource, DataTable)
         bookdt.AcceptChanges()
@@ -82,6 +97,10 @@
             .MultiSelect = False
         End With
 
-        frmLauncher.Show()
+    End Sub
+
+    Private Sub frmAddBook_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
+        'Sort Table by most recent book
+        Me.dgvBook.Sort(Me.dgvBook.Columns(0), System.ComponentModel.ListSortDirection.Descending)
     End Sub
 End Class

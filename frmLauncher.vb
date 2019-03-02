@@ -21,22 +21,18 @@ Public Class frmLauncher
 
     Private Sub frmLauncher_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         'Prompt user to make sure all saved changes are in fact saved
-        If MessageBox.Show("Are you sure you want to leave the E-Stricted Section? All unsaved redemptions will be lost.", "Leaving the E-stricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If MessageBox.Show("Are you sure you want to leave the eStricted Section? All unsaved redemptions will be lost.", "Leaving the eStricted Section?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
         Else
             e.Cancel = True
         End If
     End Sub
     Private Sub frmLauncher_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
-        'Dim driveLetter As String
 
-        'driveLetter = InputBox("Enter the Letter of the Drive in which this program is from", "Drive Letter")
-
-
-            'Read Book Table XML
+        'Read Book Table XML
         'Dim filePath As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Book.xml"
         Dim filePath As String = "Book.xml"
-            BookDataSet.ReadXml(filePath)
+        BookDataSet.ReadXml(filePath)
 
         dgvBook.DataSource = BookDataSet
         dgvBook.DataMember = "book"
@@ -59,10 +55,10 @@ Public Class frmLauncher
 
         End With
 
-            'Read Student Table XML
-            'Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
+        'Read Student Table XML
+        'Dim filePath1 As String = "G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml"
         Dim filePath1 As String = "student.xml"
-            StudentDataSet.ReadXml(filePath1)
+        StudentDataSet.ReadXml(filePath1)
 
         dgvStudent.DataSource = StudentDataSet
         dgvStudent.DataMember = "student"
@@ -91,10 +87,10 @@ Public Class frmLauncher
         'Creating Columns for Redemption Table
         dt.Columns.Add("RedemptionDate", GetType(String))
         dt.Columns.Add("RedemptionID", GetType(String))
-            dt.Columns.Add("BookID", GetType(String))
-            dt.Columns.Add("BookTitle", GetType(String))
-            dt.Columns.Add("StudentID", GetType(String))
-            dt.Columns.Add("StudentName", GetType(String))
+        dt.Columns.Add("BookID", GetType(String))
+        dt.Columns.Add("BookTitle", GetType(String))
+        dt.Columns.Add("StudentID", GetType(String))
+        dt.Columns.Add("StudentName", GetType(String))
 
         'Load and Read Redemption XML
         'dt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml")
@@ -112,16 +108,16 @@ Public Class frmLauncher
         dgvBook.DataSource = bookdt
 
         'Redemption Table (Select only One row)
-            With Me.DataGridView3
-                .SelectionMode = DataGridViewSelectionMode.FullRowSelect
-                .MultiSelect = False
-            End With
+        With Me.DataGridView3
+            .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            .MultiSelect = False
+        End With
 
-            With DataGridView3
-                .DataSource = dt
-                .AllowUserToAddRows = True : .AllowUserToDeleteRows = False
-                .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
-            End With
+        With DataGridView3
+            .DataSource = dt
+            .AllowUserToAddRows = True : .AllowUserToDeleteRows = False
+            .AllowUserToOrderColumns = False : .AllowUserToResizeRows = True
+        End With
 
         'Allow only one row selection Student Table
 
@@ -137,8 +133,8 @@ Public Class frmLauncher
         End With
 
 
-            'AutoSelect First Row
-            DataGridView3.Rows(0).Selected = True
+        'AutoSelect First Row
+        DataGridView3.Rows(0).Selected = True
 
         'Order Redemption Id's in ascending order
         DataGridView3.Sort(DataGridView3.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
@@ -164,6 +160,8 @@ Public Class frmLauncher
         'bookdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml", System.Data.XmlWriteMode.WriteSchema, False)
         bookdt.WriteXml("book.xml", System.Data.XmlWriteMode.WriteSchema, False)
 
+        'Inform user of successful saving of redemptions
+        MessageBox.Show("Redemptions Saved.", "Saved Redemptions")
     End Sub
 
     Private Sub btnDelete_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDelete.Click
@@ -187,12 +185,19 @@ Public Class frmLauncher
 
     End Sub
 
-    Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click
+    Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click, ReportToolStripMenuItem.Click
         'Load DataGridView from launcher page to Report page
         'Report.dgvReport.DataSource = DataGridView3.DataSource
-        If MessageBox.Show("Have you saved your data? You must save your data before viewing the report.", "Save Data", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            Report.Show()
-        End If
+
+        'Save Redemption to XML
+        dt = CType(DataGridView3.DataSource, DataTable)
+        dt.AcceptChanges()
+        'dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        dt.WriteXml("Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+        Report.Show()
+
+
     End Sub
 
     Private Sub SaveToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
@@ -216,17 +221,10 @@ Public Class frmLauncher
 
     End Sub
 
-    Private Sub ReportToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportToolStripMenuItem.Click
-        'Make sure Redemptions are saved (Necesary for report to work properly)
-        If MessageBox.Show("Have you saved your data? You must save your data before viewing the report.", "Save Data", MessageBoxButtons.YesNo) = DialogResult.Yes Then
-            Report.Show()
-        End If
-    End Sub
-
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
         'Display Add Student Form
         frmStudentAddition.Show()
-        Me.Hide()
+        'Me.Hide()
     End Sub
 
     Private Sub btnRedeamAfterStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnRedeamAfterStudent.Click
@@ -304,20 +302,20 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
     End Sub
 
     Private Sub frmLauncher_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
-        Call ClearTable(studentdt)
-        Call ClearTable(bookdt)
+        'Call ClearTable(studentdt)
+        'Call ClearTable(bookdt)
 
-        'Refresh Student Table
-        'Load and Read Student XML
-        'studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml")
-        studentdt.ReadXml("student.xml")
-        dgvStudent.DataSource = studentdt
+        ''Refresh Student Table
+        ''Load and Read Student XML
+        ''studentdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml")
+        'studentdt.ReadXml("student.xml")
+        'dgvStudent.DataSource = studentdt
 
-        'Refresh Book Table
-        'Load and Read Book XML
-        'bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml")
-        bookdt.ReadXml("book.xml")
-        dgvBook.DataSource = bookdt
+        ''Refresh Book Table
+        ''Load and Read Book XML
+        ''bookdt.ReadXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\book.xml")
+        'bookdt.ReadXml("book.xml")
+        'dgvBook.DataSource = bookdt
 
     End Sub
     Sub ClearTable(ByVal table As DataTable)
@@ -332,7 +330,7 @@ dgvBook.Rows.GetRowCount(DataGridViewElementStates.Selected)
 
     Private Sub btnAddBook_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddBook.Click
         frmAddBook.Show()
-        Me.Hide()
+        'Me.Hide()
     End Sub
 
     Private Sub txtStudentSearch_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtStudentSearch.TextChanged

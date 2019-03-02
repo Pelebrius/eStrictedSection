@@ -259,23 +259,23 @@ Partial Class frmLauncher
         '
         Me.lbleStrictedSection.AutoSize = True
         Me.lbleStrictedSection.BackColor = System.Drawing.Color.Transparent
-        Me.lbleStrictedSection.Font = New System.Drawing.Font("Perpetua Titling MT", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbleStrictedSection.Location = New System.Drawing.Point(355, 36)
+        Me.lbleStrictedSection.Font = New System.Drawing.Font("PMingLiU-ExtB", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbleStrictedSection.Location = New System.Drawing.Point(345, 38)
         Me.lbleStrictedSection.Name = "lbleStrictedSection"
-        Me.lbleStrictedSection.Size = New System.Drawing.Size(266, 23)
+        Me.lbleStrictedSection.Size = New System.Drawing.Size(292, 32)
         Me.lbleStrictedSection.TabIndex = 31
-        Me.lbleStrictedSection.Text = "The E-Stricted Section"
+        Me.lbleStrictedSection.Text = "The eStricted Section"
         '
         'lblRedemptions
         '
         Me.lblRedemptions.AutoSize = True
         Me.lblRedemptions.BackColor = System.Drawing.Color.Transparent
         Me.lblRedemptions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRedemptions.Location = New System.Drawing.Point(396, 318)
+        Me.lblRedemptions.Location = New System.Drawing.Point(399, 314)
         Me.lblRedemptions.Name = "lblRedemptions"
-        Me.lblRedemptions.Size = New System.Drawing.Size(179, 20)
+        Me.lblRedemptions.Size = New System.Drawing.Size(171, 20)
         Me.lblRedemptions.TabIndex = 32
-        Me.lblRedemptions.Text = "E-Book Redemptions"
+        Me.lblRedemptions.Text = "eBook Redemptions"
         '
         'frmLauncher
         '
@@ -306,7 +306,7 @@ Partial Class frmLauncher
         Me.Controls.Add(Me.MenuStrip)
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frmLauncher"
-        Me.Text = "E-stricted Section"
+        Me.Text = "eStricted Section"
         CType(Me.BookDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()

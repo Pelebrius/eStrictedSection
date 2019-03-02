@@ -35,7 +35,7 @@ Public Class frmStudentAddition
         txtId.Text = studentid
 
         'Sort Table by most recent student
-        dgvStudent.Sort(dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+        Me.dgvStudent.Sort(Me.dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
     End Sub
 
     Private Sub btnAddStudent_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAddStudent.Click
@@ -51,15 +51,23 @@ Public Class frmStudentAddition
             row = (New String() {txtId.Text, txtFirstName.Text, txtLastName.Text, cmbSchool.Text, grade, txtEmail.Text})
             studentdt.Rows.Add(row)
 
-            dgvStudent.DataSource = studentdt
+            Me.dgvStudent.DataSource = studentdt
 
             'Sort Table by most recent student
-            dgvStudent.Sort(dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+            Me.dgvStudent.Sort(Me.dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
 
             'Select most recent student
             Me.dgvStudent.Rows(0).Selected = True
 
-            MessageBox.Show("Student Successfully Added.", "Success")
+            'Update table on main page
+
+            'Save Students to XML
+            studentdt = CType(dgvStudent.DataSource, DataTable)
+            studentdt.AcceptChanges()
+            'studentdt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+            studentdt.WriteXml("student.xml", System.Data.XmlWriteMode.WriteSchema, False)
+
+            frmLauncher.studentdt.ReadXml("student.xml")
 
             'Clear display for new student information input
             Me.txtEmail.Text = Nothing
@@ -75,12 +83,16 @@ Public Class frmStudentAddition
             Me.radFifth.Checked = False
             Me.radSixth.Checked = False
             Me.radSeventh.Checked = False
+
+            'Display to user a successful addition
+            MessageBox.Show("Student Successfully Added.", "Success")
+
         End If
 
     End Sub
 
     'Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
-    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing
+    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing, btnReturnToHome.Click
 
         Me.Hide()
 
@@ -95,7 +107,6 @@ Public Class frmStudentAddition
             .MultiSelect = False
         End With
 
-        frmLauncher.Show()
     End Sub
 
     Private Sub radFirst_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles radFirst.Click, radSecond.Click, radThird.Click, radFourth.Click, radFifth.Click, radSixth.Click, radSeventh.Click
@@ -114,8 +125,6 @@ Public Class frmStudentAddition
             e.Cancel = True
         End If
 
-
-
     End Sub
 
     Function EmailAddressCheck(ByVal emailAddress As String) As Boolean
@@ -131,5 +140,8 @@ Public Class frmStudentAddition
         End If
     End Function
 
-
+    Private Sub frmStudentAddition_VisibleChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.VisibleChanged
+        'Sort Table by most recent student
+        Me.dgvStudent.Sort(Me.dgvStudent.Columns(0), System.ComponentModel.ListSortDirection.Descending)
+    End Sub
 End Class

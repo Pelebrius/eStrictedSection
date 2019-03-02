@@ -52,6 +52,8 @@ Partial Class frmStudentAddition
         Me.txtPass = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cmbSchool = New System.Windows.Forms.ComboBox()
+        Me.btnReturnToHome = New System.Windows.Forms.Button()
+        Me.lblStudentAddition = New System.Windows.Forms.Label()
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpGrade.SuspendLayout()
         CType(Me.dgvStudent, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +67,7 @@ Partial Class frmStudentAddition
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(81, 32)
+        Me.txtId.Location = New System.Drawing.Point(81, 60)
         Me.txtId.Name = "txtId"
         Me.txtId.ReadOnly = True
         Me.txtId.Size = New System.Drawing.Size(100, 20)
@@ -73,21 +75,21 @@ Partial Class frmStudentAddition
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(81, 115)
+        Me.txtFirstName.Location = New System.Drawing.Point(81, 143)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(100, 20)
         Me.txtFirstName.TabIndex = 2
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(81, 141)
+        Me.txtLastName.Location = New System.Drawing.Point(81, 169)
         Me.txtLastName.Name = "txtLastName"
         Me.txtLastName.Size = New System.Drawing.Size(100, 20)
         Me.txtLastName.TabIndex = 4
         '
         'txtSchool
         '
-        Me.txtSchool.Location = New System.Drawing.Point(81, 167)
+        Me.txtSchool.Location = New System.Drawing.Point(81, 195)
         Me.txtSchool.Name = "txtSchool"
         Me.txtSchool.Size = New System.Drawing.Size(100, 20)
         Me.txtSchool.TabIndex = 5
@@ -96,7 +98,7 @@ Partial Class frmStudentAddition
         '
         Me.txtEmail.BackColor = System.Drawing.SystemColors.Window
         Me.txtEmail.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtEmail.Location = New System.Drawing.Point(81, 195)
+        Me.txtEmail.Location = New System.Drawing.Point(81, 223)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(100, 20)
         Me.txtEmail.TabIndex = 7
@@ -106,7 +108,7 @@ Partial Class frmStudentAddition
         Me.lblId.AutoSize = True
         Me.lblId.BackColor = System.Drawing.Color.Transparent
         Me.lblId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblId.Location = New System.Drawing.Point(9, 35)
+        Me.lblId.Location = New System.Drawing.Point(9, 63)
         Me.lblId.Name = "lblId"
         Me.lblId.Size = New System.Drawing.Size(72, 13)
         Me.lblId.TabIndex = 8
@@ -117,7 +119,7 @@ Partial Class frmStudentAddition
         Me.lblFirstName.AutoSize = True
         Me.lblFirstName.BackColor = System.Drawing.Color.Transparent
         Me.lblFirstName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFirstName.Location = New System.Drawing.Point(9, 118)
+        Me.lblFirstName.Location = New System.Drawing.Point(9, 146)
         Me.lblFirstName.Name = "lblFirstName"
         Me.lblFirstName.Size = New System.Drawing.Size(71, 13)
         Me.lblFirstName.TabIndex = 9
@@ -128,7 +130,7 @@ Partial Class frmStudentAddition
         Me.lblLastName.AutoSize = True
         Me.lblLastName.BackColor = System.Drawing.Color.Transparent
         Me.lblLastName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLastName.Location = New System.Drawing.Point(9, 144)
+        Me.lblLastName.Location = New System.Drawing.Point(9, 172)
         Me.lblLastName.Name = "lblLastName"
         Me.lblLastName.Size = New System.Drawing.Size(71, 13)
         Me.lblLastName.TabIndex = 10
@@ -139,7 +141,7 @@ Partial Class frmStudentAddition
         Me.lblGrade.AutoSize = True
         Me.lblGrade.BackColor = System.Drawing.Color.Transparent
         Me.lblGrade.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblGrade.Location = New System.Drawing.Point(9, 74)
+        Me.lblGrade.Location = New System.Drawing.Point(9, 102)
         Me.lblGrade.Name = "lblGrade"
         Me.lblGrade.Size = New System.Drawing.Size(37, 13)
         Me.lblGrade.TabIndex = 11
@@ -150,7 +152,7 @@ Partial Class frmStudentAddition
         Me.lblSchool.AutoSize = True
         Me.lblSchool.BackColor = System.Drawing.Color.Transparent
         Me.lblSchool.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSchool.Location = New System.Drawing.Point(9, 170)
+        Me.lblSchool.Location = New System.Drawing.Point(9, 198)
         Me.lblSchool.Name = "lblSchool"
         Me.lblSchool.Size = New System.Drawing.Size(50, 13)
         Me.lblSchool.TabIndex = 12
@@ -161,7 +163,7 @@ Partial Class frmStudentAddition
         Me.lblEmail.AutoSize = True
         Me.lblEmail.BackColor = System.Drawing.Color.Transparent
         Me.lblEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEmail.Location = New System.Drawing.Point(9, 198)
+        Me.lblEmail.Location = New System.Drawing.Point(9, 226)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(46, 13)
         Me.lblEmail.TabIndex = 13
@@ -178,7 +180,7 @@ Partial Class frmStudentAddition
         Me.grpGrade.Controls.Add(Me.radSecond)
         Me.grpGrade.Controls.Add(Me.radFirst)
         Me.grpGrade.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grpGrade.Location = New System.Drawing.Point(54, 55)
+        Me.grpGrade.Location = New System.Drawing.Point(54, 83)
         Me.grpGrade.Name = "grpGrade"
         Me.grpGrade.Size = New System.Drawing.Size(419, 55)
         Me.grpGrade.TabIndex = 14
@@ -188,7 +190,7 @@ Partial Class frmStudentAddition
         'radSeventh
         '
         Me.radSeventh.AutoSize = True
-        Me.radSeventh.Location = New System.Drawing.Point(343, 19)
+        Me.radSeventh.Location = New System.Drawing.Point(344, 21)
         Me.radSeventh.Name = "radSeventh"
         Me.radSeventh.Size = New System.Drawing.Size(72, 17)
         Me.radSeventh.TabIndex = 7
@@ -200,7 +202,7 @@ Partial Class frmStudentAddition
         'radSixth
         '
         Me.radSixth.AutoSize = True
-        Me.radSixth.Location = New System.Drawing.Point(289, 19)
+        Me.radSixth.Location = New System.Drawing.Point(290, 21)
         Me.radSixth.Name = "radSixth"
         Me.radSixth.Size = New System.Drawing.Size(53, 17)
         Me.radSixth.TabIndex = 6
@@ -212,7 +214,7 @@ Partial Class frmStudentAddition
         'radFifth
         '
         Me.radFifth.AutoSize = True
-        Me.radFifth.Location = New System.Drawing.Point(238, 19)
+        Me.radFifth.Location = New System.Drawing.Point(239, 21)
         Me.radFifth.Name = "radFifth"
         Me.radFifth.Size = New System.Drawing.Size(50, 17)
         Me.radFifth.TabIndex = 5
@@ -224,7 +226,7 @@ Partial Class frmStudentAddition
         'radFourth
         '
         Me.radFourth.AutoSize = True
-        Me.radFourth.Location = New System.Drawing.Point(177, 19)
+        Me.radFourth.Location = New System.Drawing.Point(178, 21)
         Me.radFourth.Name = "radFourth"
         Me.radFourth.Size = New System.Drawing.Size(61, 17)
         Me.radFourth.TabIndex = 3
@@ -236,7 +238,7 @@ Partial Class frmStudentAddition
         'radThird
         '
         Me.radThird.AutoSize = True
-        Me.radThird.Location = New System.Drawing.Point(122, 19)
+        Me.radThird.Location = New System.Drawing.Point(123, 21)
         Me.radThird.Name = "radThird"
         Me.radThird.Size = New System.Drawing.Size(54, 17)
         Me.radThird.TabIndex = 2
@@ -248,7 +250,7 @@ Partial Class frmStudentAddition
         'radSecond
         '
         Me.radSecond.AutoSize = True
-        Me.radSecond.Location = New System.Drawing.Point(54, 19)
+        Me.radSecond.Location = New System.Drawing.Point(55, 21)
         Me.radSecond.Name = "radSecond"
         Me.radSecond.Size = New System.Drawing.Size(68, 17)
         Me.radSecond.TabIndex = 1
@@ -260,7 +262,7 @@ Partial Class frmStudentAddition
         'radFirst
         '
         Me.radFirst.AutoSize = True
-        Me.radFirst.Location = New System.Drawing.Point(4, 19)
+        Me.radFirst.Location = New System.Drawing.Point(5, 21)
         Me.radFirst.Name = "radFirst"
         Me.radFirst.Size = New System.Drawing.Size(49, 17)
         Me.radFirst.TabIndex = 0
@@ -274,7 +276,7 @@ Partial Class frmStudentAddition
         Me.lblCurrentStudents.AutoSize = True
         Me.lblCurrentStudents.BackColor = System.Drawing.Color.Transparent
         Me.lblCurrentStudents.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCurrentStudents.Location = New System.Drawing.Point(9, 223)
+        Me.lblCurrentStudents.Location = New System.Drawing.Point(9, 251)
         Me.lblCurrentStudents.Name = "lblCurrentStudents"
         Me.lblCurrentStudents.Size = New System.Drawing.Size(121, 16)
         Me.lblCurrentStudents.TabIndex = 15
@@ -283,7 +285,7 @@ Partial Class frmStudentAddition
         'btnAddStudent
         '
         Me.btnAddStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddStudent.Location = New System.Drawing.Point(355, 193)
+        Me.btnAddStudent.Location = New System.Drawing.Point(355, 221)
         Me.btnAddStudent.Name = "btnAddStudent"
         Me.btnAddStudent.Size = New System.Drawing.Size(97, 23)
         Me.btnAddStudent.TabIndex = 16
@@ -293,7 +295,7 @@ Partial Class frmStudentAddition
         'dgvStudent
         '
         Me.dgvStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvStudent.Location = New System.Drawing.Point(12, 241)
+        Me.dgvStudent.Location = New System.Drawing.Point(12, 269)
         Me.dgvStudent.Name = "dgvStudent"
         Me.dgvStudent.Size = New System.Drawing.Size(461, 168)
         Me.dgvStudent.TabIndex = 17
@@ -321,12 +323,12 @@ Partial Class frmStudentAddition
         'HomeToolStripMenuItem
         '
         Me.HomeToolStripMenuItem.Name = "HomeToolStripMenuItem"
-        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HomeToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.HomeToolStripMenuItem.Text = "Home"
         '
         'txtPass
         '
-        Me.txtPass.Location = New System.Drawing.Point(81, -11)
+        Me.txtPass.Location = New System.Drawing.Point(459, 0)
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(11, 20)
         Me.txtPass.TabIndex = 20
@@ -336,7 +338,7 @@ Partial Class frmStudentAddition
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.E_stricted_Section_edited_book_cover_logo
-        Me.PictureBox1.Location = New System.Drawing.Point(197, 113)
+        Me.PictureBox1.Location = New System.Drawing.Point(197, 141)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(142, 126)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -347,17 +349,40 @@ Partial Class frmStudentAddition
         '
         Me.cmbSchool.FormattingEnabled = True
         Me.cmbSchool.Items.AddRange(New Object() {"Hogwarts", "Beauxbatons", "Castelobruxo", "Durmstrang", "Ilvermorny", "Mahoutokoro", "Uagadou"})
-        Me.cmbSchool.Location = New System.Drawing.Point(81, 166)
+        Me.cmbSchool.Location = New System.Drawing.Point(81, 194)
         Me.cmbSchool.Name = "cmbSchool"
         Me.cmbSchool.Size = New System.Drawing.Size(100, 21)
         Me.cmbSchool.TabIndex = 23
+        '
+        'btnReturnToHome
+        '
+        Me.btnReturnToHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReturnToHome.Location = New System.Drawing.Point(355, 32)
+        Me.btnReturnToHome.Name = "btnReturnToHome"
+        Me.btnReturnToHome.Size = New System.Drawing.Size(118, 44)
+        Me.btnReturnToHome.TabIndex = 30
+        Me.btnReturnToHome.Text = "Return to Home Page"
+        Me.btnReturnToHome.UseVisualStyleBackColor = True
+        '
+        'lblStudentAddition
+        '
+        Me.lblStudentAddition.AutoSize = True
+        Me.lblStudentAddition.BackColor = System.Drawing.Color.Transparent
+        Me.lblStudentAddition.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStudentAddition.Location = New System.Drawing.Point(7, 28)
+        Me.lblStudentAddition.Name = "lblStudentAddition"
+        Me.lblStudentAddition.Size = New System.Drawing.Size(186, 25)
+        Me.lblStudentAddition.TabIndex = 31
+        Me.lblStudentAddition.Text = "Student Addition"
         '
         'frmStudentAddition
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(484, 425)
+        Me.ClientSize = New System.Drawing.Size(484, 476)
+        Me.Controls.Add(Me.lblStudentAddition)
+        Me.Controls.Add(Me.btnReturnToHome)
         Me.Controls.Add(Me.cmbSchool)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.dgvStudent)
@@ -380,6 +405,7 @@ Partial Class frmStudentAddition
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "frmStudentAddition"
         Me.Text = "Add Student"
+        Me.TopMost = True
         CType(Me.StudentDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpGrade.ResumeLayout(False)
         Me.grpGrade.PerformLayout()
@@ -420,4 +446,6 @@ Partial Class frmStudentAddition
     Friend WithEvents txtPass As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents cmbSchool As System.Windows.Forms.ComboBox
+    Friend WithEvents btnReturnToHome As System.Windows.Forms.Button
+    Friend WithEvents lblStudentAddition As System.Windows.Forms.Label
 End Class
