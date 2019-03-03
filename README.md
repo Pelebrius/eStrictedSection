@@ -1,4 +1,4 @@
-# FBLA Coding and Programming 2018-19
+﻿# FBLA Coding and Programming 2018-19
 This application is called the E-Stricted Section. Its purpose is to redeam e-books under a student's name and track the redemption as it is made within the program.
 
 ## Installation Instructions
@@ -10,7 +10,9 @@ This application is called the E-Stricted Section. Its purpose is to redeam e-bo
 * Look for the eStrictedSection.zip, right click the file, and select "Extract All..."
 * The extraction window will appear; click the "Extract" button
 * A File Explorer window will pop up with a folder labeled "eStrictedSection" then double click on the folder
-* Double click on the file "eStrictedSection.exe" and the main screen of the E-Stricted Section program should pop up
+* Double click on the file "eStrictedSection.exe" which will pop up a warning message titled “Windows protected your PC”
+* Click the underlined “More info” text in the pop up 
+* Click the “Run anyway” button then displayed at the bottom of the pop up and the main page of the eStricted Section program should pop up
 
 ## User Guide
 

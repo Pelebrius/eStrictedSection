@@ -72,4 +72,58 @@
     <Author>Rascal Boopkins</Author>
     <Subject>Fantasy</Subject>
   </Book>
+  <Book>
+    <BookID>10</BookID>
+    <Title>Interesting Infestations</Title>
+    <Author>Sprout</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>11</BookID>
+    <Title>Muddled Medicines</Title>
+    <Author>Pomfrey</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>12</BookID>
+    <Title>Dastardly Dark</Title>
+    <Author>Quirrell</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>13</BookID>
+    <Title>Tome of Transmutation</Title>
+    <Author>McGonagall</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>14</BookID>
+    <Title>Frivolous Floos</Title>
+    <Author>Weasley</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>15</BookID>
+    <Title>Sly Spellcraft</Title>
+    <Author>Quirrell</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>16</BookID>
+    <Title>Erudite Endeavors</Title>
+    <Author>Cornelius Fudge</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>17</BookID>
+    <Title>Wandering Wares</Title>
+    <Author>Weasley</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
+  <Book>
+    <BookID>18</BookID>
+    <Title>Forbidden Forestry</Title>
+    <Author>Flich</Author>
+    <Subject>Fantasy</Subject>
+  </Book>
 </NewDataSet>

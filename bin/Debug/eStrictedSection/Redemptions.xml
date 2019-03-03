@@ -180,4 +180,44 @@
     <StudentID>12</StudentID>
     <StudentName>Roger Salazar</StudentName>
   </Redemptions>
+  <Redemptions>
+    <RedemptionDate>02/March/2019</RedemptionDate>
+    <RedemptionID>20190302135749793</RedemptionID>
+    <BookID>7</BookID>
+    <BookTitle>Mind of the Ministry</BookTitle>
+    <StudentID>14</StudentID>
+    <StudentName>Charles Walkin</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>02/March/2019</RedemptionDate>
+    <RedemptionID>20190302151034444</RedemptionID>
+    <BookID>5</BookID>
+    <BookTitle>Enchanting Charms</BookTitle>
+    <StudentID>19</StudentID>
+    <StudentName>Stephen Factus</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>02/March/2019</RedemptionDate>
+    <RedemptionID>20190302162148862</RedemptionID>
+    <BookID>18</BookID>
+    <BookTitle>Forbidden Forestry</BookTitle>
+    <StudentID>23</StudentID>
+    <StudentName>Kennedy Fisslebend</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>02/March/2019</RedemptionDate>
+    <RedemptionID>20190302162151476</RedemptionID>
+    <BookID>15</BookID>
+    <BookTitle>Sly Spellcraft</BookTitle>
+    <StudentID>20</StudentID>
+    <StudentName>Ramond Delouis</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>02/March/2019</RedemptionDate>
+    <RedemptionID>20190302162153733</RedemptionID>
+    <BookID>13</BookID>
+    <BookTitle>Tome of Transmutation</BookTitle>
+    <StudentID>22</StudentID>
+    <StudentName>Arnold Vestus</StudentName>
+  </Redemptions>
 </NewDataSet>
