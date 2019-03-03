@@ -1,18 +1,26 @@
 ﻿# FBLA Coding and Programming 2018-19
-This application is called the E-Stricted Section. Its purpose is to redeam e-books under a student's name and track the redemption as it is made within the program.
+This application is called the eStricted Section. Its purpose is to redeam e-books under a student's name and track the redemption as it is made within the program.
 
 ## Installation Instructions
-* Click the link to go to the download page for the zip file: [eStrictedSection.zip](https://github.com/Pelebrius/eStrictedSection-install/blob/master/eStrictedSection.zip)
-* Once on the eStrictedSection page, click the [Download] button above the large gray box labled "View Raw"
+* Right click the following link and, from the menu provided, click “Open link in new tab” in order to view the directions for installation: [eStrictedSection.zip](https://github.com/Pelebrius/eStrictedSection-install/blob/master/eStrictedSection.zip)
+* Click on the newly opened tab which is the download page for the zip file
+* Once on the eStricted Section page, click the [Download] button above the large gray box labled "View Raw"
 * Download should appear at the bottom of the browser window as a red triangle warning icon with a "Discard" button
 * In order to access the eStricted Section program, click the "up" arrow to the right of the "Discard" button and then click "Keep" from the menu
 * Open your Download folder in File Explorer
 * Look for the eStrictedSection.zip, right click the file, and select "Extract All..."
 * The extraction window will appear; click the "Extract" button
 * A File Explorer window will pop up with a folder labeled "eStrictedSection" then double click on the folder
+### Follow Directions For Installation Below if You Have Windows 10 
 * Double click on the file "eStrictedSection.exe" which will pop up a warning message titled “Windows protected your PC”
 * Click the underlined “More info” text in the pop up 
 * Click the “Run anyway” button then displayed at the bottom of the pop up and the main page of the eStricted Section program should pop up
+* If any anti-virus software pops up, run the program anyway as the eStricted Section is not a virus (For example: Norton will provide a pop up titled “Download Insight” and a button labeled “Run this program anyway” which, if clicked, allows the program to run safely on your computer)
+### Follow Directions For installation Below if You Have Windows 7
+* Double click on the file “eStrictedSection.exe” which will pop up a warning message titled “Open File – Security Warning”
+* Click the “Run” Button toward the middle of the pop up
+* If any anti-virus software pops up, run the program anyway as the eStricted Section is not a virus (For example: Norton will provide a pop up titled “Download Insight” and a button labeled “Run this program anyway” which, if clicked, allows the program to run safely on your computer)
+
 
 ## User Guide
 

@@ -74,26 +74,26 @@ Partial Class frmLauncher
         Me.lblPromptBook.AutoSize = True
         Me.lblPromptBook.BackColor = System.Drawing.Color.Transparent
         Me.lblPromptBook.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPromptBook.Location = New System.Drawing.Point(672, 41)
+        Me.lblPromptBook.Location = New System.Drawing.Point(649, 40)
         Me.lblPromptBook.Name = "lblPromptBook"
-        Me.lblPromptBook.Size = New System.Drawing.Size(122, 16)
+        Me.lblPromptBook.Size = New System.Drawing.Size(144, 16)
         Me.lblPromptBook.TabIndex = 1
-        Me.lblPromptBook.Text = "Enter book Title:"
+        Me.lblPromptBook.Text = "Search Book Titles:"
         '
         'lblPromptStudent
         '
         Me.lblPromptStudent.AutoSize = True
         Me.lblPromptStudent.BackColor = System.Drawing.Color.Transparent
         Me.lblPromptStudent.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPromptStudent.Location = New System.Drawing.Point(27, 39)
+        Me.lblPromptStudent.Location = New System.Drawing.Point(27, 38)
         Me.lblPromptStudent.Name = "lblPromptStudent"
-        Me.lblPromptStudent.Size = New System.Drawing.Size(149, 32)
+        Me.lblPromptStudent.Size = New System.Drawing.Size(170, 32)
         Me.lblPromptStudent.TabIndex = 2
-        Me.lblPromptStudent.Text = "Enter Student Name:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(First or Last)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lblPromptStudent.Text = "Search Student Names:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(First or Last)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'txtStudentSearch
         '
-        Me.txtStudentSearch.Location = New System.Drawing.Point(182, 39)
+        Me.txtStudentSearch.Location = New System.Drawing.Point(203, 37)
         Me.txtStudentSearch.Name = "txtStudentSearch"
         Me.txtStudentSearch.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtStudentSearch.Size = New System.Drawing.Size(121, 20)
