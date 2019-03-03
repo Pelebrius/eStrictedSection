@@ -11,12 +11,12 @@ This application is called the eStricted Section. Its purpose is to redeam e-boo
 * Look for the eStrictedSection.zip, right click the file, and select "Extract All..."
 * The extraction window will appear; click the "Extract" button
 * A File Explorer window will pop up with a folder labeled "eStrictedSection" then double click on the folder
-### Follow Directions For Installation Below if You Have Windows 10 
+### Continued Installation Instructions Below if You Have Windows 10 
 * Double click on the file "eStrictedSection.exe" which will pop up a warning message titled “Windows protected your PC”
 * Click the underlined “More info” text in the pop up 
 * Click the “Run anyway” button then displayed at the bottom of the pop up and the main page of the eStricted Section program should pop up
 * If any anti-virus software pops up, run the program anyway as the eStricted Section is not a virus (For example: Norton will provide a pop up titled “Download Insight” and a button labeled “Run this program anyway” which, if clicked, allows the program to run safely on your computer)
-### Follow Directions For installation Below if You Have Windows 7
+### Continued Installation Instructions Below if You Have Windows 7
 * Double click on the file “eStrictedSection.exe” which will pop up a warning message titled “Open File – Security Warning”
 * Click the “Run” Button toward the middle of the pop up
 * If any anti-virus software pops up, run the program anyway as the eStricted Section is not a virus (For example: Norton will provide a pop up titled “Download Insight” and a button labeled “Run this program anyway” which, if clicked, allows the program to run safely on your computer)
@@ -37,7 +37,7 @@ The eStricted Section allows for an individual to add books into the rightmost b
 The eStricted Section allows for an individual to save his or her data so that it may be returned to at a later date. Clicking the “Save” button in the centermost column on the main page will save the data in the redemption table (table at the bottom of the program’s main screen).
 
 ## How to Delete Redemptions
-The eStricted Section allows for an individual to delete redemptions from the bottom redemption table. Clicking any redemption in the redemption table (table at the bottom of the program’s main screen) will highlight the entire row. Clicking the “Delete” button in the centermost column on the main page will display the “Delete Redemption” pop up. Clicking the “Yes” button will delete the redemption from the table and clicking the “No” button will keep the redemption in the table. 
+The eStricted Section allows for an individual to delete redemptions (students and books cannot be delted) from the bottom redemption table. Clicking any redemption in the redemption table (table at the bottom of the program’s main screen) will highlight the entire row. Clicking the “Delete” button in the centermost column on the main page will display the “Delete Redemption” pop up. Clicking the “Yes” button will delete the redemption from the table and clicking the “No” button will keep the redemption in the table. 
 
 ## How to View the Weekly Report
 The eStricted Section allows for an individual to view a weekly report of all redeemed books. Clicking the “Weekly Report” button in the centermost column on the main page will save the current data in the redemption table (table at the bottom of the program’s main screen) and the “Report” form will pop up over the main page. Clicking the “<Prior Week” button will decrement the date by seven days, showing the redeemed books of the prior week. Clicking the “Next Week>” button will increment the date by seven days, showing the redeemed books of the following week. Altering the "Start" and "End" dates within the date pickers located under the "<Prior Week" and "Next Week>" will display the redeemed books in between the chosen "Start" and "End" dates. In order for the program to work correctly the starting date had to be one day behind, redemptions made on the actual date not appearing otherwise.
