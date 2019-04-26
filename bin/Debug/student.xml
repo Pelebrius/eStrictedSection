@@ -7,7 +7,7 @@
           <xs:element name="Student">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="Student_x0020_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="Student_x0020_ID" type="xs:int" minOccurs="0" />
                 <xs:element name="First_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="Last_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="School" type="xs:string" minOccurs="0" />
@@ -211,5 +211,45 @@
     <School>Ilvermorny</School>
     <Grade>5</Grade>
     <E-Mail>Twillow@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>25</Student_x0020_ID>
+    <First_x0020_Name>Ron</First_x0020_Name>
+    <Last_x0020_Name>Bugs</Last_x0020_Name>
+    <School>Castelobruxo</School>
+    <Grade>2</Grade>
+    <E-Mail>Ron@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>26</Student_x0020_ID>
+    <First_x0020_Name>Ron</First_x0020_Name>
+    <Last_x0020_Name>Bugs</Last_x0020_Name>
+    <School>Durmstrang</School>
+    <Grade>3</Grade>
+    <E-Mail>Ron@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>27</Student_x0020_ID>
+    <First_x0020_Name>Sam</First_x0020_Name>
+    <Last_x0020_Name>Burgles</Last_x0020_Name>
+    <School>Castelobruxo</School>
+    <Grade>2</Grade>
+    <E-Mail>Sam@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>28</Student_x0020_ID>
+    <First_x0020_Name>Dan</First_x0020_Name>
+    <Last_x0020_Name>Smtih</Last_x0020_Name>
+    <School>Durmstrang</School>
+    <Grade>5</Grade>
+    <E-Mail>Dan@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>29</Student_x0020_ID>
+    <First_x0020_Name>Reginald</First_x0020_Name>
+    <Last_x0020_Name>Marcutheo</Last_x0020_Name>
+    <School>Ilvermorny</School>
+    <Grade>5</Grade>
+    <E-Mail>Reginald@wiz.com</E-Mail>
   </Student>
 </NewDataSet>

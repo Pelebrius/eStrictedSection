@@ -126,4 +126,16 @@
     <Author>Flich</Author>
     <Subject>Fantasy</Subject>
   </Book>
+  <Book>
+    <BookID>19</BookID>
+    <Title>Book of Magic</Title>
+    <Author>Lockheart</Author>
+    <Subject>Fiction</Subject>
+  </Book>
+  <Book>
+    <BookID>20</BookID>
+    <Title>Book of Information</Title>
+    <Author>Hooch</Author>
+    <Subject>Fiction</Subject>
+  </Book>
 </NewDataSet>

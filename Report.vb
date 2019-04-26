@@ -283,7 +283,7 @@
     Private Sub btnReset_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReset.Click
         Me.txtReport.Text = Nothing
 
- 
+
         Dim startDay As Date
         Dim endDay As Date
 

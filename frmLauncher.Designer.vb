@@ -211,7 +211,7 @@ Partial Class frmLauncher
         Me.btnRedeamAfterStudent.Name = "btnRedeamAfterStudent"
         Me.btnRedeamAfterStudent.Size = New System.Drawing.Size(75, 23)
         Me.btnRedeamAfterStudent.TabIndex = 25
-        Me.btnRedeamAfterStudent.Text = "Redeam"
+        Me.btnRedeamAfterStudent.Text = "Redeem"
         Me.btnRedeamAfterStudent.UseVisualStyleBackColor = True
         '
         'dgvBook

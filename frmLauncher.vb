@@ -183,6 +183,11 @@ Public Class frmLauncher
             End If
         End If
 
+        'Save Redemption to XML
+        dt = CType(DataGridView3.DataSource, DataTable)
+        dt.AcceptChanges()
+        'dt.WriteXml("G:\FBLA Coding\FBLA 2018 Coding and Programming\FBLA 2018 Coding and Programming\Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
+        dt.WriteXml("Redemptions.xml", System.Data.XmlWriteMode.WriteSchema, False)
     End Sub
 
     Private Sub btnReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReport.Click, ReportToolStripMenuItem.Click

@@ -7,7 +7,7 @@
           <xs:element name="Student">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="Student_x0020_ID" type="xs:string" minOccurs="0" />
+                <xs:element name="Student_x0020_ID" type="xs:int" minOccurs="0" />
                 <xs:element name="First_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="Last_x0020_Name" type="xs:string" minOccurs="0" />
                 <xs:element name="School" type="xs:string" minOccurs="0" />

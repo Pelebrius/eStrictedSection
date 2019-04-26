@@ -246,6 +246,7 @@ Partial Class Report
         Me.Controls.Add(Me.dgvReport)
         Me.Name = "Report"
         Me.Text = "Report"
+        Me.TopMost = True
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         CType(Me.dgvReport, System.ComponentModel.ISupportInitialize).EndInit()
