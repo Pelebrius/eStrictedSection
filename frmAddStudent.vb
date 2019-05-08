@@ -86,6 +86,9 @@ Public Class frmStudentAddition
             Me.radSixth.Checked = False
             Me.radSeventh.Checked = False
 
+            'Select most recent student
+            Me.dgvStudent.Rows(0).Selected = True
+
             'Display to user a successful addition
             MessageBox.Show("Student Successfully Added.", "Success")
 

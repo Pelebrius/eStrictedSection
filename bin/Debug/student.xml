@@ -252,4 +252,36 @@
     <Grade>5</Grade>
     <E-Mail>Reginald@wiz.com</E-Mail>
   </Student>
+  <Student>
+    <Student_x0020_ID>30</Student_x0020_ID>
+    <First_x0020_Name>Xavior</First_x0020_Name>
+    <Last_x0020_Name>Sebaret</Last_x0020_Name>
+    <School>Hogwarts</School>
+    <Grade>5</Grade>
+    <E-Mail>Sebaret@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>31</Student_x0020_ID>
+    <First_x0020_Name>Gringle</First_x0020_Name>
+    <Last_x0020_Name>Gotts</Last_x0020_Name>
+    <School>Durmstrang</School>
+    <Grade>6</Grade>
+    <E-Mail>Gotts@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>32</Student_x0020_ID>
+    <First_x0020_Name>Peter</First_x0020_Name>
+    <Last_x0020_Name>Snoogle</Last_x0020_Name>
+    <School>Mahoutokoro</School>
+    <Grade>7</Grade>
+    <E-Mail>Snoogle@wiz.com</E-Mail>
+  </Student>
+  <Student>
+    <Student_x0020_ID>33</Student_x0020_ID>
+    <First_x0020_Name>Ashley</First_x0020_Name>
+    <Last_x0020_Name>Macht</Last_x0020_Name>
+    <School>Beauxbatons</School>
+    <Grade>4</Grade>
+    <E-Mail>Macht@wiz.com</E-Mail>
+  </Student>
 </NewDataSet>

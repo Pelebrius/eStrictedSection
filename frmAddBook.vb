@@ -78,6 +78,9 @@
             Me.txtAuthor.Text = Nothing
             Me.txtBookSubject.Text = Nothing
 
+            'Select most recent book
+            Me.dgvBook.Rows(0).Selected = True
+
             'Display to user a successful addition
             MessageBox.Show("Book Successfully Added.", "Success")
         End If

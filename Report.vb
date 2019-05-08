@@ -73,10 +73,12 @@
 
 
     End Sub
-    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing, btnReturnToHome.Click
-        Me.Hide()
+    Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, btnReturnToHome.Click
+        'Private Sub HomeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles HomeToolStripMenuItem.Click, Me.FormClosing, btnReturnToHome.Click
+        Me.txtReport.Text = Nothing
         frmLauncher.DataGridView3.Sort(frmLauncher.DataGridView3.Columns(1), System.ComponentModel.ListSortDirection.Ascending)
         frmLauncher.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnWeeklyReport_Click(ByVal sender As Object, ByVal e As System.EventArgs)

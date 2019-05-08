@@ -110,22 +110,6 @@
   </Redemptions>
   <Redemptions>
     <RedemptionDate>03/February/2019</RedemptionDate>
-    <RedemptionID>20190203203520</RedemptionID>
-    <BookID>1</BookID>
-    <BookTitle>A Magical Me</BookTitle>
-    <StudentID>5</StudentID>
-    <StudentName>Dean Thomas</StudentName>
-  </Redemptions>
-  <Redemptions>
-    <RedemptionDate>03/February/2019</RedemptionDate>
-    <RedemptionID>20190203205524</RedemptionID>
-    <BookID>4</BookID>
-    <BookTitle>Captivating Cartography</BookTitle>
-    <StudentID>5</StudentID>
-    <StudentName>Dean Thomas</StudentName>
-  </Redemptions>
-  <Redemptions>
-    <RedemptionDate>03/February/2019</RedemptionDate>
     <RedemptionID>20190203213416392</RedemptionID>
     <BookID>1</BookID>
     <BookTitle>A Magical Me</BookTitle>
@@ -267,5 +251,29 @@
     <BookTitle>Book of Information</BookTitle>
     <StudentID>28</StudentID>
     <StudentName>Dan Smtih</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>07/May/2019</RedemptionDate>
+    <RedemptionID>20190507203238269</RedemptionID>
+    <BookID>19</BookID>
+    <BookTitle>Book of Magic</BookTitle>
+    <StudentID>31</StudentID>
+    <StudentName>Gringle Gotts</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>07/May/2019</RedemptionDate>
+    <RedemptionID>20190507204056842</RedemptionID>
+    <BookID>4</BookID>
+    <BookTitle>Captivating Cartography</BookTitle>
+    <StudentID>17</StudentID>
+    <StudentName>Fredrestor Milten</StudentName>
+  </Redemptions>
+  <Redemptions>
+    <RedemptionDate>07/May/2019</RedemptionDate>
+    <RedemptionID>20190507204059977</RedemptionID>
+    <BookID>6</BookID>
+    <BookTitle>Simple Sorcery</BookTitle>
+    <StudentID>19</StudentID>
+    <StudentName>Stephen Factus</StudentName>
   </Redemptions>
 </NewDataSet>

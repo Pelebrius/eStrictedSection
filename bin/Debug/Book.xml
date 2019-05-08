@@ -7,7 +7,7 @@
           <xs:element name="Book">
             <xs:complexType>
               <xs:sequence>
-                <xs:element name="BookID" type="xs:string" minOccurs="0" />
+                <xs:element name="BookID" type="xs:int" minOccurs="0" />
                 <xs:element name="Title" type="xs:string" minOccurs="0" />
                 <xs:element name="Author" type="xs:string" minOccurs="0" />
                 <xs:element name="Subject" type="xs:string" minOccurs="0" />
@@ -136,6 +136,12 @@
     <BookID>20</BookID>
     <Title>Book of Information</Title>
     <Author>Hooch</Author>
+    <Subject>Fiction</Subject>
+  </Book>
+  <Book>
+    <BookID>21</BookID>
+    <Title>Witches Brew</Title>
+    <Author>Sprout</Author>
     <Subject>Fiction</Subject>
   </Book>
 </NewDataSet>
